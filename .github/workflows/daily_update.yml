@@ -1,0 +1,38 @@
+name: Daily 9-15 AM Exam Data Update
+
+on:
+  schedule:
+    # 03:45 UTC = 9:15 AM IST every day
+    - cron: '45 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-exam-json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Google GenAI SDK
+        run: pip install -U google-genai
+
+      - name: Run 100-Exam Update Script
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python update_exams.py
+
+      - name: Commit and Push Updated JSON
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add exams-data.json
+          git diff --staged --quiet || git commit -m "Auto-update 100 exams for $(date +'%Y-%m-%d')"
+          git push
