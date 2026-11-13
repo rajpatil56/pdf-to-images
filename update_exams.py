@@ -87,7 +87,7 @@ def generate_batch(prompt):
 
 def update_all_100_exams():
     all_exams = []
-    active_model = "gemini-2.5-flash-lite"
+    active_model = "gemini-3.5-flash-lite"
 
     for batch_name, exam_list in EXAM_BATCHES.items():
         print(f"Generating {batch_name} (25 exams)...")
