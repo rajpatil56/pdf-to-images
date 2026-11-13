@@ -2,7 +2,8 @@ name: Daily 9-15 AM Exam Data Update
 
 on:
   schedule:
-    - cron: '45 3 * * *' # 9:15 AM IST every day
+    # 03:45 UTC = 9:15 AM IST every day
+    - cron: '45 3 * * *'
   workflow_dispatch:
 
 permissions:
@@ -20,13 +21,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install Google GenAI SDK
-        run: pip install -U google-genai
-
-      - name: Run 100-Exam Update Script
-        env:
-          ANTIGRAVITY_API_KEY: ${{ secrets.ANTIGRAVITY_API_KEY }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      - name: Run 100-Exam RSS Scraper
         run: python update_exams.py
 
       - name: Commit and Push Updated JSON
