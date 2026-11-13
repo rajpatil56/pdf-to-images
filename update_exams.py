@@ -17,7 +17,7 @@ now_ist = datetime.now(ist)
 today_str = now_ist.strftime("%d %B %Y")
 time_str = now_ist.strftime("%I:%M %p IST")
 
-# All 100 exams grouped into 4 batches of 25 exams (Uses only 4 RPD out of 500 RPD)
+# All 100 exams grouped into 4 batches of 25 exams
 EXAM_BATCHES = {
     "Batch 1: SSC, Railways & UPSC": [
         "SSC CGL", "SSC CHSL", "SSC MTS & Havaldar", "SSC GD Constable", "SSC CPO",
@@ -50,24 +50,24 @@ EXAM_BATCHES = {
 }
 
 def fetch_live_rss_news(query):
-    """Fetches free live Google News RSS headlines for real-time exam context."""
+    """Fetches free live Google News RSS headlines with a fast 5-second timeout so it never hangs."""
     url = f"https://news.google.com/rss/search?q={urllib.parse.quote(query)}+exam+notification+india&hl=en-IN&gl=IN&ceid=IN:en"
     headlines = []
     try:
         req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-        with urllib.request.urlopen(req, timeout=10) as response:
+        with urllib.request.urlopen(req, timeout=5) as response:
             root = ET.fromstring(response.read())
-            for item in root.findall('.//item')[:10]:
+            for item in root.findall('.//item')[:5]:
                 title = item.find('title').text if item.find('title') is not None else ""
-                pub_date = item.find('pubDate').text if item.find('pubDate') is not None else ""
-                headlines.append(f"- {title} ({pub_date})")
-    except Exception as e:
-        print(f"RSS fetch warning: {e}")
+                headlines.append(f"- {title}")
+    except Exception:
+        pass
     return "\n".join(headlines)
 
 def generate_batch(prompt):
-    """Calls Gemini Flash-Lite with automatic model fallback if an alias changes."""
-    models_to_try = ["gemini-2.5-flash-lite", "gemini-3.5-flash-lite", "gemini-2.5-flash"]
+    """Fast execution using gemini-3.8-flash with immediate model fallback."""
+    models_to_try = ["gemini-3.8-flash", "gemini-3.5-flash-lite"]
+    
     for model_name in models_to_try:
         try:
             response = client.models.generate_content(
@@ -76,18 +76,22 @@ def generate_batch(prompt):
                 config=types.GenerateContentConfig(
                     response_mime_type="application/json",
                     max_output_tokens=8192,
-                    temperature=0.4,
+                    temperature=0.3,
                 ),
             )
-            return json.loads(response.text.strip()), model_name
+            raw = response.text.strip()
+            if raw.startswith("```"):
+                raw = raw.split("\n", 1)[1].rsplit("```", 1)[0].strip()
+            return json.loads(raw), model_name
         except Exception as e:
-            print(f"Model {model_name} attempt note: {e}. Trying next...")
-            time.sleep(2)
-    raise RuntimeError("All model attempts failed. Check your GEMINI_API_KEY.")
+            print(f"Model {model_name} note: {e}. Trying next...")
+            time.sleep(1)
+            
+    raise RuntimeError("Model generation failed.")
 
 def update_all_100_exams():
     all_exams = []
-    active_model = "gemini-3.5-flash-lite"
+    active_model = "gemini-3.8-flash"
 
     for batch_name, exam_list in EXAM_BATCHES.items():
         print(f"Generating {batch_name} (25 exams)...")
@@ -95,32 +99,28 @@ def update_all_100_exams():
 
         prompt = f"""
 Today is {today_str}.
-Live Indian exam news headlines for reference:
-{live_news}
+Live news reference: {live_news}
 
-Generate an updated JSON array for these exact 25 exams:
+Generate a valid JSON array for these exact 25 exams:
 {json.dumps(exam_list)}
 
 Each of the 25 objects in the JSON array MUST contain these exact keys:
 - "id": Number from 1 to 25
 - "exam_name": Exact name from the list
-- "sector": MUST be one of these exact strings so website filters work: "Railways", "SSC", "Banking", "UPSC", "State PSC", "PSU/Tech", "Teaching", or "Entrance"
-- "status": Current status as of {today_str} (e.g., "Apply Online", "CBT Scheduled Dec/Jan", "Admit Card Out", "Notification Expected", "Annual Cycle")
-- "last_date": Exact or expected Last Date to Fill Form (e.g., "13 Nov 2026", "30 Dec 2026", or "TBA - Check Notice")
-- "target_window": Exam or application timeline for 2026-2027
-- "official_portal": Official website domain where students apply (e.g., "rrbapply.gov.in", "ssc.gov.in", "upsconline.nic.in", "ibps.in", "sbi.co.in", "mpsc.gov.in", "nta.ac.in")
-- "apply_url": Full https:// official application URL (e.g., "https://www.rrbapply.gov.in/", "https://ssc.gov.in/", "https://upsconline.nic.in/")
-- "daily_tip": A fresh, original, practical 1-sentence study or form-filling tip for students.
+- "sector": MUST be one of: "Railways", "SSC", "Banking", "UPSC", "State PSC", "PSU/Tech", "Teaching", or "Entrance"
+- "status": Current status as of {today_str} (e.g., "Apply Online", "CBT Scheduled", "Admit Card Out")
+- "last_date": Last Date to Fill Form (e.g., "30 Nov 2026" or "TBA")
+- "target_window": Timeline for 2026-2027
+- "official_portal": Official domain (e.g., "rrbapply.gov.in", "ssc.gov.in", "upsconline.nic.in", "ibps.in")
+- "apply_url": Full https:// URL (e.g., "https://www.rrbapply.gov.in/")
+- "daily_tip": 1-sentence study or form-filling tip.
 
-Return ONLY a valid JSON array containing all 25 objects.
+Return ONLY a valid JSON array.
 """
         batch_items, active_model = generate_batch(prompt)
         all_exams.extend(batch_items)
+        time.sleep(2)  # Short 2-second pause
 
-        # Wait 6 seconds between calls to stay well below the 15 RPM limit
-        time.sleep(6)
-
-    # Number all 100 exams cleanly from 1 to 100
     for idx, exam in enumerate(all_exams, start=1):
         exam["id"] = idx
 
@@ -134,7 +134,7 @@ Return ONLY a valid JSON array containing all 25 objects.
     with open("exams-data.json", "w", encoding="utf-8") as f:
         json.dump(output_data, f, indent=2, ensure_ascii=False)
 
-    print(f"Success! {len(all_exams)} exams written to exams-data.json using {active_model}.")
+    print(f"Success! {len(all_exams)} exams written using {active_model}.")
 
 if __name__ == "__main__":
     update_all_100_exams()
