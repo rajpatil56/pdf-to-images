@@ -25,6 +25,7 @@ jobs:
 
       - name: Run 100-Exam Update Script
         env:
+          ANTIGRAVITY_API_KEY: ${{ secrets.ANTIGRAVITY_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python update_exams.py
 
@@ -32,14 +33,13 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # Configure remote pull behavior
-          git pull origin main --rebase || true
-          
+
           git add exams-data.json
-          
-          # Only commit if there are actual changes
-          git diff --staged --quiet || git commit -m "Auto-update 100 exams for $(date +'%Y-%m-%d')"
-          
-          # Push safely to main
-          git push origin main
+
+          if ! git diff --staged --quiet; then
+            git commit -m "Auto-update 100 exams for $(date +'%Y-%m-%d')"
+            git pull --rebase -X theirs origin main
+            git push origin main
+          else
+            echo "No changes in exams-data.json to commit."
+          fi
