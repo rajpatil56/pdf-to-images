@@ -1,200 +1,156 @@
 import os
 import json
-import time
 import urllib.request
 import urllib.parse
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone, timedelta
 
-try:
-    from google import genai
-    from google.genai import types
-except ImportError:
-    genai = None
-
-ANTIGRAVITY_API_KEY = os.environ.get("ANTIGRAVITY_API_KEY", "").strip()
-ANTIGRAVITY_BASE_URL = os.environ.get(
-    "ANTIGRAVITY_BASE_URL",
-    "https://api.antigravity.dev/v1/chat/completions"
-).strip()
-ANTIGRAVITY_MODEL = os.environ.get("ANTIGRAVITY_MODEL", "antigravity-default").strip()
-
-GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "").strip()
-gemini_client = genai.Client(api_key=GEMINI_API_KEY) if (genai and GEMINI_API_KEY) else None
-
+# Set Indian Standard Time (IST)
 ist = timezone(timedelta(hours=5, minutes=30))
 now_ist = datetime.now(ist)
 today_str = now_ist.strftime("%d %B %Y")
 time_str = now_ist.strftime("%I:%M %p IST")
+day_of_year = now_ist.timetuple().tm_yday
 
 EXAM_BATCHES = {
-    "Batch 1: SSC, Railways & UPSC": [
+    "SSC": [
         "SSC CGL", "SSC CHSL", "SSC MTS & Havaldar", "SSC GD Constable", "SSC CPO",
-        "SSC JE", "SSC Stenographer", "SSC Selection Post", "SSC JHT", "Delhi Police Constable",
-        "RRB NTPC Graduate", "RRB NTPC Undergraduate", "RRB Group D", "RRB ALP", "RRB Technician",
-        "RRB JE", "RPF SI", "RPF Constable", "DFCCIL", "Metro Rail (DMRC/MahaMetro)",
-        "UPSC CSE (IAS/IPS)", "UPSC IFoS", "UPSC ESE (IES)", "UPSC CDS", "UPSC NDA & NA"
+        "SSC JE", "SSC Stenographer", "SSC Selection Post", "SSC JHT", "Delhi Police Constable"
     ],
-    "Batch 2: UPSC Central, Banking & Insurance": [
+    "Railways": [
+        "RRB NTPC Graduate", "RRB NTPC Undergraduate", "RRB Group D", "RRB ALP", "RRB Technician",
+        "RRB JE", "RPF SI", "RPF Constable", "DFCCIL", "Metro Rail (DMRC/MahaMetro)"
+    ],
+    "UPSC": [
+        "UPSC CSE (IAS/IPS)", "UPSC IFoS", "UPSC ESE (IES)", "UPSC CDS", "UPSC NDA & NA",
         "UPSC CAPF AC", "UPSC EPFO", "UPSC CMS", "UPSC Geo-Scientist", "UPSC IES/ISS",
+        "AFCAT", "IB ACIO", "IB Security Assistant", "Territorial Army Officer", "CSIR CASE SO/ASO"
+    ],
+    "Banking": [
         "SBI PO", "SBI Clerk", "IBPS PO", "IBPS Clerk", "IBPS SO",
         "IBPS RRB PO", "IBPS RRB Clerk", "RBI Grade B", "RBI Assistant", "NABARD Grade A",
         "SEBI Grade A", "SIDBI Grade A", "IBPS RRB Scale-II/III", "NHB Assistant Manager", "State Co-op Bank",
-        "LIC AAO", "LIC Assistant", "LIC ADO", "NIACL AO & Assistant", "EPFO SSA"
+        "LIC AAO", "LIC Assistant", "LIC ADO", "NIACL AO & Assistant", "EPFO SSA",
+        "FCI AG-III & Manager", "ESIC UDC & MTS", "UIIC AO/Assistant", "NICL AO"
     ],
-    "Batch 3: Defence, State PSC & Technical PSUs": [
-        "AFCAT", "Army Agniveer", "Air Force Agniveer Vayu", "Navy Agniveer SSR/MR", "Indian Coast Guard Navik",
-        "IB ACIO", "IB Security Assistant", "State Police SI (PSI/Daroga)", "State Police Constable", "Territorial Army Officer",
-        "State PCS (MPSC/UPPSC/BPSC)", "MPSC Group B & C", "Talathi / Patwari / Lekhpal", "UPSSSC PET / CET", "State High Court ASO/Clerk",
-        "Zilla Parishad (ZP) Exams", "State Forest Guard", "FCI AG-III & Manager", "ESIC UDC & MTS", "NVS / EMRS Non-Teaching",
-        "GATE", "ISRO Scientist/Engineer", "DRDO Scientist B & CEPTAM", "BARC Scientific Officer", "NIC Scientist B (NIELIT)"
+    "State PSC": [
+        "State Police SI (PSI/Daroga)", "State Police Constable", "State PCS (MPSC/UPPSC/BPSC)",
+        "MPSC Group B & C", "Talathi / Patwari / Lekhpal", "UPSSSC PET / CET",
+        "State High Court ASO/Clerk", "Zilla Parishad (ZP) Exams", "State Forest Guard", "State Judiciary (PCS-J)"
     ],
-    "Batch 4: Engineering PSUs, Teaching & Entrance Exams": [
-        "AAI ATC Junior Executive", "Maharatna PSU Non-GATE (HPCL/BEL)", "State Electricity Board (MSEDCL AE/JE)", "CPWD / State PWD JE/AE", "CSIR CASE SO/ASO",
-        "UGC NET / JRF", "CSIR NET", "CTET", "State TET / MAHA TET", "KVS PRT/TGT/PGT",
-        "DSSSB Teachers & DASS", "B.Ed CET (MAH/UP)", "UIIC AO/Assistant", "NICL AO", "State Judiciary (PCS-J)",
-        "JEE Main & Advanced", "NEET UG", "State Engg CET (MHT-CET/KCET)", "CUET UG & PG", "CAT",
-        "XAT / SNAP / CMAT / MAH-MBA-CET", "CLAT & AILET", "CA / CS / CMA", "NIMCET", "BITSAT & IISER IAT"
+    "PSU/Tech": [
+        "Army Agniveer", "Air Force Agniveer Vayu", "Navy Agniveer SSR/MR", "Indian Coast Guard Navik",
+        "GATE", "ISRO Scientist/Engineer", "DRDO Scientist B & CEPTAM", "BARC Scientific Officer",
+        "NIC Scientist B (NIELIT)", "AAI ATC Junior Executive", "Maharatna PSU Non-GATE (HPCL/BEL)",
+        "State Electricity Board (MSEDCL AE/JE)", "CPWD / State PWD JE/AE", "CSIR NET"
+    ],
+    "Teaching": [
+        "NVS / EMRS Non-Teaching", "UGC NET / JRF", "CTET", "State TET / MAHA TET",
+        "KVS PRT/TGT/PGT", "DSSSB Teachers & DASS"
+    ],
+    "Entrance": [
+        "B.Ed CET (MAH/UP)", "JEE Main & Advanced", "NEET UG", "State Engg CET (MHT-CET/KCET)",
+        "CUET UG & PG", "CAT", "XAT / SNAP / CMAT / MAH-MBA-CET", "CLAT & AILET",
+        "CA / CS / CMA", "NIMCET", "BITSAT & IISER IAT"
     ]
 }
 
-def clean_json_response(raw_text):
-    raw = raw_text.strip()
-    if raw.startswith("```"):
-        raw = raw.split("\n", 1)[1].rsplit("```", 1)[0].strip()
-    s, e = raw.find("["), raw.rfind("]")
-    if s != -1 and e != -1:
-        raw = raw[s:e + 1]
-    return json.loads(raw)
+PORTAL_MAP = {
+    "SSC": ("ssc.gov.in", "https://ssc.gov.in/"),
+    "Railways": ("rrbapply.gov.in", "https://www.rrbapply.gov.in/"),
+    "UPSC": ("upsconline.nic.in", "https://upsconline.nic.in/"),
+    "Banking": ("ibps.in", "https://www.ibps.in/"),
+    "State PSC": ("mpsc.gov.in", "https://mpsc.gov.in/"),
+    "PSU/Tech": ("ncs.gov.in", "https://www.ncs.gov.in/"),
+    "Teaching": ("ctet.nic.in", "https://ctet.nic.in/"),
+    "Entrance": ("nta.ac.in", "https://www.nta.ac.in/")
+}
 
-def fetch_live_rss_news(query):
-    url = f"https://news.google.com/rss/search?q={urllib.parse.quote(query)}+exam+notification+india&hl=en-IN&gl=IN&ceid=IN:en"
-    headlines = []
+TIPS_POOL = [
+    "Solve at least one full-length previous year mock test under timed conditions today.",
+    "Keep scanned copies of your photograph, signature, and category certificate ready before the portal rush.",
+    "Focus 40 minutes today on high-weightage current affairs and static GK from the last 6 months.",
+    "Review your weak areas from recent mock tests and revise core formula sheets.",
+    "Check the official portal early to avoid last-day server slowdowns during form submission.",
+    "Practice sectional speed drills in quantitative aptitude and logical reasoning to clear cutoffs."
+]
+
+def fetch_sector_headlines(sector):
+    """Fetches real-time Google News RSS headlines for the sector in <1 second."""
+    q = urllib.parse.quote(f"{sector} recruitment exam notification apply online india")
+    url = f"https://news.google.com/rss/search?q={q}&hl=en-IN&gl=IN&ceid=IN:en"
+    titles = []
     try:
-        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-        with urllib.request.urlopen(req, timeout=5) as response:
-            root = ET.fromstring(response.read())
-            for item in root.findall('.//item')[:5]:
-                title = item.find('title').text if item.find('title') is not None else ""
-                headlines.append(f"- {title}")
-    except Exception:
-        pass
-    return "\n".join(headlines)
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=5) as resp:
+            root = ET.fromstring(resp.read())
+            for item in root.findall(".//item")[:20]:
+                t = item.find("title").text if item.find("title") is not None else ""
+                titles.append(t)
+    except Exception as e:
+        print(f"RSS warning for {sector}: {e}")
+    return titles
 
-def call_antigravity_api(prompt):
-    if not ANTIGRAVITY_API_KEY:
-        return None, None
-    models = [ANTIGRAVITY_MODEL, "antigravity-agent", "gemini-3.8-flash", "gemini-3.5-flash-lite"]
-    for m in models:
-        try:
-            payload = json.dumps({
-                "model": m,
-                "messages": [
-                    {"role": "system", "content": "Return ONLY a valid JSON array."},
-                    {"role": "user", "content": prompt}
-                ],
-                "temperature": 0.3,
-                "max_tokens": 8192
-            }).encode("utf-8")
-            req = urllib.request.Request(
-                ANTIGRAVITY_BASE_URL,
-                data=payload,
-                headers={
-                    "Content-Type": "application/json",
-                    "Authorization": f"Bearer {ANTIGRAVITY_API_KEY}",
-                    "x-api-key": ANTIGRAVITY_API_KEY
-                },
-                method="POST"
-            )
-            with urllib.request.urlopen(req, timeout=45) as resp:
-                resp_data = json.loads(resp.read().decode("utf-8"))
-                content = (
-                    resp_data.get("choices", [{}])[0].get("message", {}).get("content")
-                    or resp_data.get("text")
-                    or resp_data.get("output")
-                    or ""
-                )
-                parsed = clean_json_response(content)
-                if isinstance(parsed, list) and len(parsed) > 0:
-                    return parsed, f"antigravity:{m}"
-        except Exception as e:
-            print(f"Antigravity ({m}) note: {e}")
-            time.sleep(2)
-    return None, None
+def detect_live_status(exam_name, headlines):
+    """Detects live exam status from real news headlines or returns active cycle status."""
+    short_key = exam_name.split("(")[0].strip().lower()
+    matched_headline = ""
+    for h in headlines:
+        if short_key in h.lower():
+            matched_headline = h
+            break
 
-def generate_batch(prompt):
-    ag_data, ag_model = call_antigravity_api(prompt)
-    if ag_data:
-        return ag_data, ag_model
-    if gemini_client:
-        gemini_models = ["gemini-3.8-flash", "gemini-3.5-flash-lite", "gemini-2.5-flash", "gemini-2.5-flash-lite"]
-        for r in range(1, 5):
-            for m in gemini_models:
-                try:
-                    resp = gemini_client.models.generate_content(
-                        model=m,
-                        contents=prompt,
-                        config=types.GenerateContentConfig(
-                            response_mime_type="application/json",
-                            max_output_tokens=8192,
-                            temperature=0.3,
-                        ),
-                    )
-                    parsed = clean_json_response(resp.text)
-                    if isinstance(parsed, list) and len(parsed) > 0:
-                        return parsed, m
-                except Exception as e:
-                    print(f"[Round {r}/4] {m} note: {e}")
-                    time.sleep(2)
-            time.sleep(r * 4)
-    return None, None
+    h_low = matched_headline.lower()
+    if "admit card" in h_low or "hall ticket" in h_low:
+        status, window = "Admit Card Out", "Download Now (2026)"
+    elif "apply online" in h_low or "registration" in h_low or "last date" in h_low:
+        status, window = "Apply Online Open", "Active Window 2026"
+    elif "result" in h_low or "cutoff" in h_low:
+        status, window = "Result / Merit List Update", "Check Portal"
+    elif "answer key" in h_low:
+        status, window = "Answer Key Released", "Check Official Link"
+    elif "exam date" in h_low or "schedule" in h_low:
+        status, window = "Exam Schedule Out", "2026-2027 Cycle"
+    else:
+        status, window = "Active 2026-27 Cycle", "Check Official Calendar"
 
-def update_all_100_exams():
-    existing_exams = []
-    if os.path.exists("exams-data.json"):
-        try:
-            with open("exams-data.json", "r", encoding="utf-8") as f:
-                existing_exams = json.load(f).get("exams", [])
-        except Exception:
-            existing_exams = []
+    return status, window, matched_headline
 
+def build_100_exams():
     all_exams = []
-    active_model = "gemini-3.8-flash"
+    exam_id = 1
 
-    for batch_idx, (batch_name, exam_list) in enumerate(EXAM_BATCHES.items()):
-        print(f"Generating {batch_name} (25 exams)...")
-        live_news = fetch_live_rss_news(batch_name.split(":")[1])
-        prompt = f"""Today is {today_str}.
-Live news: {live_news}
-Generate a JSON array for these 25 exams: {json.dumps(exam_list)}
-Required keys per object:
-- "id": 1 to 25
-- "exam_name": Exact name
-- "sector": One of "Railways", "SSC", "Banking", "UPSC", "State PSC", "PSU/Tech", "Teaching", "Entrance"
-- "status": Current status (e.g., "Apply Online", "CBT Scheduled", "Admit Card Out")
-- "last_date": Last Date to Fill Form (e.g., "30 Nov 2026" or "TBA")
-- "target_window": Timeline for 2026-2027
-- "official_portal": Official domain (e.g., "rrbapply.gov.in", "ssc.gov.in")
-- "apply_url": Full https:// URL
-- "daily_tip": 1-sentence tip.
-Return ONLY a valid JSON array."""
+    for sector, exams in EXAM_BATCHES.items():
+        print(f"Fetching live RSS feed for {sector}...")
+        headlines = fetch_sector_headlines(sector)
+        default_portal, default_url = PORTAL_MAP.get(sector, ("ncs.gov.in", "https://www.ncs.gov.in/"))
 
-        batch_items, used_model = generate_batch(prompt)
-        if batch_items:
-            all_exams.extend(batch_items)
-            active_model = used_model
-        else:
-            start_i = batch_idx * 25
-            all_exams.extend(existing_exams[start_i:start_i + 25])
-            print(f"Using cached data for {batch_name} so workflow stays green.")
-        time.sleep(2)
+        for exam_name in exams:
+            status, window, headline = detect_live_status(exam_name, headlines)
+            tip_idx = (exam_id + day_of_year) % len(TIPS_POOL)
+            base_tip = TIPS_POOL[tip_idx]
+            if headline:
+                clean_news = headline.split(" - ")[0]
+                daily_tip = f"Latest Update: {clean_news}. {base_tip}"
+            else:
+                daily_tip = f"Prepare systematically for {exam_name}: {base_tip}"
 
-    for idx, exam in enumerate(all_exams, start=1):
-        exam["id"] = idx
+            all_exams.append({
+                "id": exam_id,
+                "exam_name": exam_name,
+                "sector": sector,
+                "status": status,
+                "last_date": window,
+                "target_window": "2026-2027 Session",
+                "official_portal": default_portal,
+                "apply_url": default_url,
+                "daily_tip": daily_tip
+            })
+            exam_id += 1
 
     output_data = {
         "last_updated": f"{today_str}, {time_str}",
-        "model_used": active_model,
+        "model_used": "live-rss-scraper-v1",
         "total_exams": len(all_exams),
         "exams": all_exams
     }
@@ -202,7 +158,7 @@ Return ONLY a valid JSON array."""
     with open("exams-data.json", "w", encoding="utf-8") as f:
         json.dump(output_data, f, indent=2, ensure_ascii=False)
 
-    print(f"Success! {len(all_exams)} exams written using {active_model}.")
+    print(f"Success! {len(all_exams)} exams updated in exams-data.json with zero API keys.")
 
 if __name__ == "__main__":
-    update_all_100_exams()
+    build_100_exams()
