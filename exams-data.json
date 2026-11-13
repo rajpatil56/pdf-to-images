@@ -1,807 +1,1107 @@
 {
-  "last_updated": "13 November 2026, 06:00 AM IST",
-  "model_used": "gemini-3.5-flash-lite",
+  "last_updated": "13 November 2026, 06:03 PM IST",
+  "model_used": "live-rss-scraper-v1",
   "total_exams": 100,
   "exams": [
     {
       "id": 1,
       "exam_name": "SSC CGL",
       "sector": "SSC",
-      "status": "Notification Expected",
-      "target_window": "Mid 2027",
-      "daily_tip": "Focus heavily on Tier-2 level quantitative aptitude and advanced math shortcuts to outscore the competition."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ssc.gov.in",
+      "apply_url": "https://ssc.gov.in/",
+      "daily_tip": "Latest Update: SSC CGL Notification 2026 Out for 10731 Group B and C Vacancy. Solve at least one full-length previous year mock test under timed conditions today."
     },
     {
       "id": 2,
       "exam_name": "SSC CHSL",
       "sector": "SSC",
-      "status": "Notification Expected",
-      "target_window": "Mid 2027",
-      "daily_tip": "Practice at least two descriptive writing samples weekly alongside your objective tier-1 preparation."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ssc.gov.in",
+      "apply_url": "https://ssc.gov.in/",
+      "daily_tip": "Prepare systematically for SSC CHSL: Keep scanned copies of your photograph, signature, and category certificate ready before the portal rush."
     },
     {
       "id": 3,
       "exam_name": "SSC MTS & Havaldar",
       "sector": "SSC",
-      "status": "Annual Cycle",
-      "target_window": "Early 2027",
-      "daily_tip": "Do not ignore General Awareness and static GK, as they hold the key to clearing the merit cutoff."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ssc.gov.in",
+      "apply_url": "https://ssc.gov.in/",
+      "daily_tip": "Prepare systematically for SSC MTS & Havaldar: Focus 40 minutes today on high-weightage current affairs and static GK from the last 6 months."
     },
     {
       "id": 4,
       "exam_name": "SSC GD Constable",
       "sector": "SSC",
-      "status": "Apply Online",
-      "target_window": "Early 2027",
-      "daily_tip": "Balance your daily physical endurance training with consistent reasoning and numerical ability mock tests."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ssc.gov.in",
+      "apply_url": "https://ssc.gov.in/",
+      "daily_tip": "Prepare systematically for SSC GD Constable: Review your weak areas from recent mock tests and revise core formula sheets."
     },
     {
       "id": 5,
       "exam_name": "SSC CPO",
       "sector": "SSC",
-      "status": "Notification Expected",
-      "target_window": "Mid 2027",
-      "daily_tip": "Analyze previous years' English comprehension questions meticulously to master cloze tests and error spotting."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ssc.gov.in",
+      "apply_url": "https://ssc.gov.in/",
+      "daily_tip": "Prepare systematically for SSC CPO: Check the official portal early to avoid last-day server slowdowns during form submission."
     },
     {
       "id": 6,
       "exam_name": "SSC JE",
       "sector": "SSC",
-      "status": "Notification Expected",
-      "target_window": "Mid 2027",
-      "daily_tip": "Revise core engineering formula sheets daily to improve accuracy and speed during Paper 1."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ssc.gov.in",
+      "apply_url": "https://ssc.gov.in/",
+      "daily_tip": "Prepare systematically for SSC JE: Practice sectional speed drills in quantitative aptitude and logical reasoning to clear cutoffs."
     },
     {
       "id": 7,
       "exam_name": "SSC Stenographer",
       "sector": "SSC",
-      "status": "Notification Expected",
-      "target_window": "Late 2027",
-      "daily_tip": "Dedicate at least one hour daily exclusively to shorthand transcription and typing speed drills."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ssc.gov.in",
+      "apply_url": "https://ssc.gov.in/",
+      "daily_tip": "Prepare systematically for SSC Stenographer: Solve at least one full-length previous year mock test under timed conditions today."
     },
     {
       "id": 8,
       "exam_name": "SSC Selection Post",
       "sector": "SSC",
-      "status": "Notification Expected",
-      "target_window": "Mid 2027",
-      "daily_tip": "Tailor your preparation to the specific educational qualification level and syllabus requirements of your chosen post."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ssc.gov.in",
+      "apply_url": "https://ssc.gov.in/",
+      "daily_tip": "Prepare systematically for SSC Selection Post: Keep scanned copies of your photograph, signature, and category certificate ready before the portal rush."
     },
     {
       "id": 9,
       "exam_name": "SSC JHT",
       "sector": "SSC",
-      "status": "Notification Expected",
-      "target_window": "Late 2027",
-      "daily_tip": "Read bilingual literature extensively to strengthen both Hindi and English translation skills."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ssc.gov.in",
+      "apply_url": "https://ssc.gov.in/",
+      "daily_tip": "Prepare systematically for SSC JHT: Focus 40 minutes today on high-weightage current affairs and static GK from the last 6 months."
     },
     {
       "id": 10,
       "exam_name": "Delhi Police Constable",
       "sector": "SSC",
-      "status": "Notification Expected",
-      "target_window": "Late 2027",
-      "daily_tip": "Keep a sharp focus on current affairs related to Delhi and national security policies for the computer-based exam."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ssc.gov.in",
+      "apply_url": "https://ssc.gov.in/",
+      "daily_tip": "Prepare systematically for Delhi Police Constable: Review your weak areas from recent mock tests and revise core formula sheets."
     },
     {
       "id": 11,
       "exam_name": "RRB NTPC Graduate",
       "sector": "Railways",
-      "status": "CBT Scheduled Dec/Jan",
-      "target_window": "Dec 2026 - Jan 2027",
-      "daily_tip": "Solve full-length CBT mock tests under strict time limits to improve your question-selection strategy."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "rrbapply.gov.in",
+      "apply_url": "https://www.rrbapply.gov.in/",
+      "daily_tip": "Prepare systematically for RRB NTPC Graduate: Check the official portal early to avoid last-day server slowdowns during form submission."
     },
     {
       "id": 12,
       "exam_name": "RRB NTPC Undergraduate",
       "sector": "Railways",
-      "status": "CBT Scheduled Dec/Jan",
-      "target_window": "Dec 2026 - Jan 2027",
-      "daily_tip": "Focus heavily on high-weightage topics like general science and basic arithmetic to secure quick marks."
+      "status": "Exam Schedule Out",
+      "last_date": "2026-2027 Cycle",
+      "target_window": "2026-2027 Session",
+      "official_portal": "rrbapply.gov.in",
+      "apply_url": "https://www.rrbapply.gov.in/",
+      "daily_tip": "Latest Update: RRB NTPC Undergraduate CBT 2 Exam Date 2026 Out, Check Official Notice. Practice sectional speed drills in quantitative aptitude and logical reasoning to clear cutoffs."
     },
     {
       "id": 13,
       "exam_name": "RRB Group D",
       "sector": "Railways",
-      "status": "CBT Scheduled Dec/Jan",
-      "target_window": "Early 2027",
-      "daily_tip": "Regularly practice mental ability puzzles to cut down calculation time during the CBT."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "rrbapply.gov.in",
+      "apply_url": "https://www.rrbapply.gov.in/",
+      "daily_tip": "Latest Update: RRB Group D Recruitment 2026: CEN 9/2025 notification released for 21997 posts, apply here. Solve at least one full-length previous year mock test under timed conditions today."
     },
     {
       "id": 14,
       "exam_name": "RRB ALP",
       "sector": "Railways",
-      "status": "Admit Card Soon",
-      "target_window": "Late 2026",
-      "daily_tip": "Review fundamental engineering drawing and basic science concepts to ace the technical sections."
+      "status": "Exam Schedule Out",
+      "last_date": "2026-2027 Cycle",
+      "target_window": "2026-2027 Session",
+      "official_portal": "rrbapply.gov.in",
+      "apply_url": "https://www.rrbapply.gov.in/",
+      "daily_tip": "Latest Update: RRB ALP Exam Date 2026 Out For CBT 1, Download Official Notice and Read. Keep scanned copies of your photograph, signature, and category certificate ready before the portal rush."
     },
     {
       "id": 15,
       "exam_name": "RRB Technician",
       "sector": "Railways",
-      "status": "Admit Card Soon",
-      "target_window": "Late 2026",
-      "daily_tip": "Do not skip trade-specific mock tests to ensure complete confidence in technical aptitude questions."
+      "status": "Exam Schedule Out",
+      "last_date": "2026-2027 Cycle",
+      "target_window": "2026-2027 Session",
+      "official_portal": "rrbapply.gov.in",
+      "apply_url": "https://www.rrbapply.gov.in/",
+      "daily_tip": "Latest Update: RRB Technician Exam Date 2026 Out For Grade 1 and 3, Revised Vacancy For Grade 3 Posts. Focus 40 minutes today on high-weightage current affairs and static GK from the last 6 months."
     },
     {
       "id": 16,
       "exam_name": "RRB JE",
       "sector": "Railways",
-      "status": "Notification Expected",
-      "target_window": "Early 2027",
-      "daily_tip": "Strengthen your grasp of technical core subjects while maintaining steady practice in general awareness."
+      "status": "Exam Schedule Out",
+      "last_date": "2026-2027 Cycle",
+      "target_window": "2026-2027 Session",
+      "official_portal": "rrbapply.gov.in",
+      "apply_url": "https://www.rrbapply.gov.in/",
+      "daily_tip": "Latest Update: RRB JE Exam Date 2026, Check 4487 Revised Vacancies Here. Review your weak areas from recent mock tests and revise core formula sheets."
     },
     {
       "id": 17,
       "exam_name": "RPF SI",
       "sector": "Railways",
-      "status": "Admit Card Soon",
-      "target_window": "Late 2026",
-      "daily_tip": "Combine your cognitive preparation with consistent running and long jump practice for the physical test."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "rrbapply.gov.in",
+      "apply_url": "https://www.rrbapply.gov.in/",
+      "daily_tip": "Prepare systematically for RPF SI: Check the official portal early to avoid last-day server slowdowns during form submission."
     },
     {
       "id": 18,
       "exam_name": "RPF Constable",
       "sector": "Railways",
-      "status": "Admit Card Soon",
-      "target_window": "Late 2026",
-      "daily_tip": "Prioritize high-scoring sections like reasoning and basic arithmetic to build a strong total score."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "rrbapply.gov.in",
+      "apply_url": "https://www.rrbapply.gov.in/",
+      "daily_tip": "Prepare systematically for RPF Constable: Practice sectional speed drills in quantitative aptitude and logical reasoning to clear cutoffs."
     },
     {
       "id": 19,
       "exam_name": "DFCCIL",
       "sector": "Railways",
-      "status": "Notification Expected",
-      "target_window": "Mid 2027",
-      "daily_tip": "Stay updated on recent developments in freight corridors and railway infrastructure projects."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "rrbapply.gov.in",
+      "apply_url": "https://www.rrbapply.gov.in/",
+      "daily_tip": "Prepare systematically for DFCCIL: Solve at least one full-length previous year mock test under timed conditions today."
     },
     {
       "id": 20,
       "exam_name": "Metro Rail (DMRC/MahaMetro)",
-      "sector": "PSU/Tech",
-      "status": "Notification Expected",
-      "target_window": "Mid 2027",
-      "daily_tip": "Practice technical MCQs and maintain high speed in quantitative aptitude to clear sectional cutoffs."
+      "sector": "Railways",
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "rrbapply.gov.in",
+      "apply_url": "https://www.rrbapply.gov.in/",
+      "daily_tip": "Prepare systematically for Metro Rail (DMRC/MahaMetro): Keep scanned copies of your photograph, signature, and category certificate ready before the portal rush."
     },
     {
       "id": 21,
       "exam_name": "UPSC CSE (IAS/IPS)",
       "sector": "UPSC",
-      "status": "Annual Cycle",
-      "target_window": "May 2027 (Prelims)",
-      "daily_tip": "Integrate answer writing with daily editorial analysis to build multidimensional perspectives for GS papers."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "upsconline.nic.in",
+      "apply_url": "https://upsconline.nic.in/",
+      "daily_tip": "Prepare systematically for UPSC CSE (IAS/IPS): Focus 40 minutes today on high-weightage current affairs and static GK from the last 6 months."
     },
     {
       "id": 22,
       "exam_name": "UPSC IFoS",
       "sector": "UPSC",
-      "status": "Annual Cycle",
-      "target_window": "May 2027 (Prelims)",
-      "daily_tip": "Give equal attention to your chosen optional science subjects right from the preliminary preparation phase."
+      "status": "Exam Schedule Out",
+      "last_date": "2026-2027 Cycle",
+      "target_window": "2026-2027 Session",
+      "official_portal": "upsconline.nic.in",
+      "apply_url": "https://upsconline.nic.in/",
+      "daily_tip": "Latest Update: UPSC IFoS Mains 2026, Exam Date, Schedule, Syllabus, Exam Pattern. Review your weak areas from recent mock tests and revise core formula sheets."
     },
     {
       "id": 23,
       "exam_name": "UPSC ESE (IES)",
       "sector": "UPSC",
-      "status": "Annual Cycle",
-      "target_window": "Early 2027",
-      "daily_tip": "Master Engineering Ethics and ICT topics thoroughly, as they form the scoring core of General Studies Paper 1."
+      "status": "Exam Schedule Out",
+      "last_date": "2026-2027 Cycle",
+      "target_window": "2026-2027 Session",
+      "official_portal": "upsconline.nic.in",
+      "apply_url": "https://upsconline.nic.in/",
+      "daily_tip": "Latest Update: UPSC ESE Exam Date 2027 Out, CBT Exam on 31 January 2027, Check Exam Schedule Here. Check the official portal early to avoid last-day server slowdowns during form submission."
     },
     {
       "id": 24,
       "exam_name": "UPSC CDS",
       "sector": "UPSC",
-      "status": "Notification Expected",
-      "target_window": "Early 2027",
-      "daily_tip": "Revise NCERT history and geography maps regularly to secure easy marks in the elementary English and GK papers."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "upsconline.nic.in",
+      "apply_url": "https://upsconline.nic.in/",
+      "daily_tip": "Prepare systematically for UPSC CDS: Practice sectional speed drills in quantitative aptitude and logical reasoning to clear cutoffs."
     },
     {
       "id": 25,
       "exam_name": "UPSC NDA & NA",
       "sector": "UPSC",
-      "status": "Notification Expected",
-      "target_window": "Early 2027",
-      "daily_tip": "Focus heavily on trigonometry, calculus, and algebra to maximize your score in the Mathematics paper."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "upsconline.nic.in",
+      "apply_url": "https://upsconline.nic.in/",
+      "daily_tip": "Prepare systematically for UPSC NDA & NA: Solve at least one full-length previous year mock test under timed conditions today."
     },
     {
       "id": 26,
       "exam_name": "UPSC CAPF AC",
       "sector": "UPSC",
-      "status": "Annual Cycle",
-      "target_window": "August 2027",
-      "daily_tip": "Focus heavily on strengthening your physical endurance alongside your written paper preparation from today."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "upsconline.nic.in",
+      "apply_url": "https://upsconline.nic.in/",
+      "daily_tip": "Prepare systematically for UPSC CAPF AC: Keep scanned copies of your photograph, signature, and category certificate ready before the portal rush."
     },
     {
       "id": 27,
       "exam_name": "UPSC EPFO",
       "sector": "UPSC",
-      "status": "Notification Expected",
-      "target_window": "Mid 2027",
-      "daily_tip": "Revise labor laws and industrial relations regularly to score high in the objective section."
+      "status": "Exam Schedule Out",
+      "last_date": "2026-2027 Cycle",
+      "target_window": "2026-2027 Session",
+      "official_portal": "upsconline.nic.in",
+      "apply_url": "https://upsconline.nic.in/",
+      "daily_tip": "Latest Update: UPSC EPFO APFC Notification 2026 Out: 80 Vacancies, Eligibility, Exam Date, Application Process & Complete Details. Focus 40 minutes today on high-weightage current affairs and static GK from the last 6 months."
     },
     {
       "id": 28,
       "exam_name": "UPSC CMS",
       "sector": "UPSC",
-      "status": "Annual Cycle",
-      "target_window": "July 2027",
-      "daily_tip": "Practise clinical case studies alongside standard medical theory to tackle the medical science papers efficiently."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "upsconline.nic.in",
+      "apply_url": "https://upsconline.nic.in/",
+      "daily_tip": "Prepare systematically for UPSC CMS: Review your weak areas from recent mock tests and revise core formula sheets."
     },
     {
       "id": 29,
       "exam_name": "UPSC Geo-Scientist",
       "sector": "UPSC",
-      "status": "Annual Cycle",
-      "target_window": "February 2027",
-      "daily_tip": "Master foundational concepts in geology and geophysics by solving previous decade numerical questions."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "upsconline.nic.in",
+      "apply_url": "https://upsconline.nic.in/",
+      "daily_tip": "Prepare systematically for UPSC Geo-Scientist: Check the official portal early to avoid last-day server slowdowns during form submission."
     },
     {
       "id": 30,
       "exam_name": "UPSC IES/ISS",
       "sector": "UPSC",
-      "status": "Annual Cycle",
-      "target_window": "June 2027",
-      "daily_tip": "Build robust command over advanced statistical theory and core engineering fundamentals to clear the rigorous subjective papers."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "upsconline.nic.in",
+      "apply_url": "https://upsconline.nic.in/",
+      "daily_tip": "Prepare systematically for UPSC IES/ISS: Practice sectional speed drills in quantitative aptitude and logical reasoning to clear cutoffs."
     },
     {
       "id": 31,
-      "exam_name": "SBI PO",
-      "sector": "Banking",
-      "status": "Notification Expected",
-      "target_window": "Late 2026 - Early 2027",
-      "daily_tip": "Develop a habit of speed reading complex financial editorials to drastically improve your reading comprehension accuracy."
+      "exam_name": "AFCAT",
+      "sector": "UPSC",
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "upsconline.nic.in",
+      "apply_url": "https://upsconline.nic.in/",
+      "daily_tip": "Prepare systematically for AFCAT: Solve at least one full-length previous year mock test under timed conditions today."
     },
     {
       "id": 32,
-      "exam_name": "SBI Clerk",
-      "sector": "Banking",
-      "status": "Notification Expected",
-      "target_window": "Early 2027",
-      "daily_tip": "Target solving at least thirty simplification and approximation questions daily to boost your speed for the preliminary stage."
+      "exam_name": "IB ACIO",
+      "sector": "UPSC",
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "upsconline.nic.in",
+      "apply_url": "https://upsconline.nic.in/",
+      "daily_tip": "Prepare systematically for IB ACIO: Keep scanned copies of your photograph, signature, and category certificate ready before the portal rush."
     },
     {
       "id": 33,
-      "exam_name": "IBPS PO",
-      "sector": "Banking",
-      "status": "Mains Scheduled",
-      "target_window": "Late 2026",
-      "daily_tip": "Prioritize high-weightage topics like computer aptitude and current banking awareness for the upcoming mains examination."
+      "exam_name": "IB Security Assistant",
+      "sector": "UPSC",
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "upsconline.nic.in",
+      "apply_url": "https://upsconline.nic.in/",
+      "daily_tip": "Prepare systematically for IB Security Assistant: Focus 40 minutes today on high-weightage current affairs and static GK from the last 6 months."
     },
     {
       "id": 34,
-      "exam_name": "IBPS Clerk",
-      "sector": "Banking",
-      "status": "Result Awaited",
-      "target_window": "Late 2026",
-      "daily_tip": "Utilize this waiting period to refine your typing skills and brush up your general awareness for future opportunities."
+      "exam_name": "Territorial Army Officer",
+      "sector": "UPSC",
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "upsconline.nic.in",
+      "apply_url": "https://upsconline.nic.in/",
+      "daily_tip": "Prepare systematically for Territorial Army Officer: Review your weak areas from recent mock tests and revise core formula sheets."
     },
     {
       "id": 35,
-      "exam_name": "IBPS SO",
-      "sector": "Banking",
-      "status": "Admit Card Soon",
-      "target_window": "December 2026 - January 2027",
-      "daily_tip": "Revise core professional knowledge concepts using concise mind maps rather than reading long textbooks."
+      "exam_name": "CSIR CASE SO/ASO",
+      "sector": "UPSC",
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "upsconline.nic.in",
+      "apply_url": "https://upsconline.nic.in/",
+      "daily_tip": "Prepare systematically for CSIR CASE SO/ASO: Check the official portal early to avoid last-day server slowdowns during form submission."
     },
     {
       "id": 36,
-      "exam_name": "IBPS RRB PO",
+      "exam_name": "SBI PO",
       "sector": "Banking",
-      "status": "Interview Stage",
-      "target_window": "Late 2026",
-      "daily_tip": "Prepare detailed notes on rural banking schemes, priority sector lending, and current agricultural initiatives."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ibps.in",
+      "apply_url": "https://www.ibps.in/",
+      "daily_tip": "Prepare systematically for SBI PO: Practice sectional speed drills in quantitative aptitude and logical reasoning to clear cutoffs."
     },
     {
       "id": 37,
-      "exam_name": "IBPS RRB Clerk",
+      "exam_name": "SBI Clerk",
       "sector": "Banking",
-      "status": "Provisional Allotment",
-      "target_window": "Late 2026",
-      "daily_tip": "Keep your document verification checklist thoroughly organized and verified well in advance."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ibps.in",
+      "apply_url": "https://www.ibps.in/",
+      "daily_tip": "Prepare systematically for SBI Clerk: Solve at least one full-length previous year mock test under timed conditions today."
     },
     {
       "id": 38,
-      "exam_name": "RBI Grade B",
+      "exam_name": "IBPS PO",
       "sector": "Banking",
-      "status": "Notification Expected",
-      "target_window": "Mid 2027",
-      "daily_tip": "Read economic surveys and central bank policy bulletins thoroughly to master descriptive economics writing."
+      "status": "Exam Schedule Out",
+      "last_date": "2026-2027 Cycle",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ibps.in",
+      "apply_url": "https://www.ibps.in/",
+      "daily_tip": "Latest Update: IBPS PO Exam Date 2026 Out for Mains, Check Full Schedule. Keep scanned copies of your photograph, signature, and category certificate ready before the portal rush."
     },
     {
       "id": 39,
-      "exam_name": "RBI Assistant",
+      "exam_name": "IBPS Clerk",
       "sector": "Banking",
-      "status": "Notification Expected",
-      "target_window": "Early 2027",
-      "daily_tip": "Focus heavily on maintaining high sectional speed in numerical ability and English language tests."
+      "status": "Exam Schedule Out",
+      "last_date": "2026-2027 Cycle",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ibps.in",
+      "apply_url": "https://www.ibps.in/",
+      "daily_tip": "Latest Update: IBPS Clerk Mains Exam Date 2026 Out, Check Exam Schedule. Focus 40 minutes today on high-weightage current affairs and static GK from the last 6 months."
     },
     {
       "id": 40,
-      "exam_name": "NABARD Grade A",
+      "exam_name": "IBPS SO",
       "sector": "Banking",
-      "status": "Notification Expected",
-      "target_window": "Mid 2027",
-      "daily_tip": "Dedicate specific study hours to agricultural and rural development schemes to excel in phase two."
+      "status": "Exam Schedule Out",
+      "last_date": "2026-2027 Cycle",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ibps.in",
+      "apply_url": "https://www.ibps.in/",
+      "daily_tip": "Latest Update: IBPS SO 2026 Mains Exam Date Out (1043 Vacancies), Check Mains Exam Schedule. Review your weak areas from recent mock tests and revise core formula sheets."
     },
     {
       "id": 41,
-      "exam_name": "SEBI Grade A",
+      "exam_name": "IBPS RRB PO",
       "sector": "Banking",
-      "status": "Notification Expected",
-      "target_window": "Mid 2027",
-      "daily_tip": "Strengthen your conceptual clarity in corporate finance, securities market regulations, and costing."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ibps.in",
+      "apply_url": "https://www.ibps.in/",
+      "daily_tip": "Prepare systematically for IBPS RRB PO: Check the official portal early to avoid last-day server slowdowns during form submission."
     },
     {
       "id": 42,
-      "exam_name": "SIDBI Grade A",
+      "exam_name": "IBPS RRB Clerk",
       "sector": "Banking",
-      "status": "Notification Expected",
-      "target_window": "Early 2027",
-      "daily_tip": "Stay updated with government policies, micro-finance interventions, and MSME sector developments."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ibps.in",
+      "apply_url": "https://www.ibps.in/",
+      "daily_tip": "Prepare systematically for IBPS RRB Clerk: Practice sectional speed drills in quantitative aptitude and logical reasoning to clear cutoffs."
     },
     {
       "id": 43,
-      "exam_name": "IBPS RRB Scale-II/III",
+      "exam_name": "RBI Grade B",
       "sector": "Banking",
-      "status": "Interview Stage",
-      "target_window": "Late 2026",
-      "daily_tip": "Draw from your practical professional work experience to structure impactful, real-world answers during the interview."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ibps.in",
+      "apply_url": "https://www.ibps.in/",
+      "daily_tip": "Prepare systematically for RBI Grade B: Solve at least one full-length previous year mock test under timed conditions today."
     },
     {
       "id": 44,
-      "exam_name": "NHB Assistant Manager",
+      "exam_name": "RBI Assistant",
       "sector": "Banking",
-      "status": "Notification Expected",
-      "target_window": "Early 2027",
-      "daily_tip": "Focus on housing finance sector trends, urban development guidelines, and core economic indicators."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ibps.in",
+      "apply_url": "https://www.ibps.in/",
+      "daily_tip": "Prepare systematically for RBI Assistant: Keep scanned copies of your photograph, signature, and category certificate ready before the portal rush."
     },
     {
       "id": 45,
-      "exam_name": "State Co-op Bank",
+      "exam_name": "NABARD Grade A",
       "sector": "Banking",
-      "status": "Various Stages",
-      "target_window": "2026-2027",
-      "daily_tip": "Practice state-specific general knowledge alongside national banking awareness for regional competitive exams."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ibps.in",
+      "apply_url": "https://www.ibps.in/",
+      "daily_tip": "Prepare systematically for NABARD Grade A: Focus 40 minutes today on high-weightage current affairs and static GK from the last 6 months."
     },
     {
       "id": 46,
-      "exam_name": "LIC AAO",
+      "exam_name": "SEBI Grade A",
       "sector": "Banking",
-      "status": "Notification Expected",
-      "target_window": "Early 2027",
-      "daily_tip": "Incorporate insurance sector terminology and historical regulatory updates into your daily current affairs notes."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ibps.in",
+      "apply_url": "https://www.ibps.in/",
+      "daily_tip": "Prepare systematically for SEBI Grade A: Review your weak areas from recent mock tests and revise core formula sheets."
     },
     {
       "id": 47,
-      "exam_name": "LIC Assistant",
+      "exam_name": "SIDBI Grade A",
       "sector": "Banking",
-      "status": "Notification Expected",
-      "target_window": "Early 2027",
-      "daily_tip": "Prioritize accuracy in quantitative aptitude and reasoning ability to comfortably clear high regional cutoffs."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ibps.in",
+      "apply_url": "https://www.ibps.in/",
+      "daily_tip": "Prepare systematically for SIDBI Grade A: Check the official portal early to avoid last-day server slowdowns during form submission."
     },
     {
       "id": 48,
-      "exam_name": "LIC ADO",
+      "exam_name": "IBPS RRB Scale-II/III",
       "sector": "Banking",
-      "status": "Notification Expected",
-      "target_window": "Mid 2027",
-      "daily_tip": "Develop strong sales strategy concepts and insurance market understanding to ace the professional section."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ibps.in",
+      "apply_url": "https://www.ibps.in/",
+      "daily_tip": "Prepare systematically for IBPS RRB Scale-II/III: Practice sectional speed drills in quantitative aptitude and logical reasoning to clear cutoffs."
     },
     {
       "id": 49,
-      "exam_name": "NIACL AO & Assistant",
+      "exam_name": "NHB Assistant Manager",
       "sector": "Banking",
-      "status": "Notification Expected",
-      "target_window": "Early 2027",
-      "daily_tip": "Review general insurance types, risk management principles, and recent sector mergers for competitive edge."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ibps.in",
+      "apply_url": "https://www.ibps.in/",
+      "daily_tip": "Prepare systematically for NHB Assistant Manager: Solve at least one full-length previous year mock test under timed conditions today."
     },
     {
       "id": 50,
-      "exam_name": "EPFO SSA",
+      "exam_name": "State Co-op Bank",
       "sector": "Banking",
-      "status": "Result Awaited",
-      "target_window": "Late 2026",
-      "daily_tip": "Keep your computer skill test typing speed sharp while awaiting final merit list announcements."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ibps.in",
+      "apply_url": "https://www.ibps.in/",
+      "daily_tip": "Prepare systematically for State Co-op Bank: Keep scanned copies of your photograph, signature, and category certificate ready before the portal rush."
     },
     {
       "id": 51,
-      "exam_name": "AFCAT",
-      "sector": "UPSC",
-      "status": "Notification Expected",
-      "target_window": "Early 2027",
-      "daily_tip": "Focus heavily on numerical ability and verbal reasoning shortcuts to finish the AFCAT paper well before the timer expires."
+      "exam_name": "LIC AAO",
+      "sector": "Banking",
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ibps.in",
+      "apply_url": "https://www.ibps.in/",
+      "daily_tip": "Prepare systematically for LIC AAO: Focus 40 minutes today on high-weightage current affairs and static GK from the last 6 months."
     },
     {
       "id": 52,
-      "exam_name": "Army Agniveer",
-      "sector": "PSU/Tech",
-      "status": "Annual Cycle",
-      "target_window": "Ongoing 2026-2027",
-      "daily_tip": "Balance your daily physical endurance training with consistent practice of online CEE mock tests."
+      "exam_name": "LIC Assistant",
+      "sector": "Banking",
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ibps.in",
+      "apply_url": "https://www.ibps.in/",
+      "daily_tip": "Prepare systematically for LIC Assistant: Review your weak areas from recent mock tests and revise core formula sheets."
     },
     {
       "id": 53,
-      "exam_name": "Air Force Agniveer Vayu",
-      "sector": "PSU/Tech",
-      "status": "Notification Expected",
-      "target_window": "Early 2027",
-      "daily_tip": "Master high school English grammar and fundamental physics concepts to clear the Agniveer Vayu cutoff easily."
+      "exam_name": "LIC ADO",
+      "sector": "Banking",
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ibps.in",
+      "apply_url": "https://www.ibps.in/",
+      "daily_tip": "Prepare systematically for LIC ADO: Check the official portal early to avoid last-day server slowdowns during form submission."
     },
     {
       "id": 54,
-      "exam_name": "Navy Agniveer SSR/MR",
-      "sector": "PSU/Tech",
-      "status": "Annual Cycle",
-      "target_window": "Mid 2027",
-      "daily_tip": "Revise class 10th and 12th science formulas thoroughly to secure high marks in the Navy SSR technical section."
+      "exam_name": "NIACL AO & Assistant",
+      "sector": "Banking",
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ibps.in",
+      "apply_url": "https://www.ibps.in/",
+      "daily_tip": "Prepare systematically for NIACL AO & Assistant: Practice sectional speed drills in quantitative aptitude and logical reasoning to clear cutoffs."
     },
     {
       "id": 55,
-      "exam_name": "Indian Coast Guard Navik",
-      "sector": "PSU/Tech",
-      "status": "Apply Online",
-      "target_window": "Late 2026",
-      "daily_tip": "Practice sectional tests for basic mathematics and reasoning to boost your speed in the Coast Guard CBT exam."
+      "exam_name": "EPFO SSA",
+      "sector": "Banking",
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ibps.in",
+      "apply_url": "https://www.ibps.in/",
+      "daily_tip": "Prepare systematically for EPFO SSA: Solve at least one full-length previous year mock test under timed conditions today."
     },
     {
       "id": 56,
-      "exam_name": "IB ACIO",
-      "sector": "UPSC",
-      "status": "Notification Expected",
-      "target_window": "Early 2027",
-      "daily_tip": "Read national security editorials daily to sharpen your analytical writing and current affairs knowledge for Tier-II."
+      "exam_name": "FCI AG-III & Manager",
+      "sector": "Banking",
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ibps.in",
+      "apply_url": "https://www.ibps.in/",
+      "daily_tip": "Prepare systematically for FCI AG-III & Manager: Keep scanned copies of your photograph, signature, and category certificate ready before the portal rush."
     },
     {
       "id": 57,
-      "exam_name": "IB Security Assistant",
-      "sector": "UPSC",
-      "status": "Notification Expected",
-      "target_window": "Mid 2027",
-      "daily_tip": "Improve your local language proficiency and general awareness regarding neighboring nations for secure scoring."
+      "exam_name": "ESIC UDC & MTS",
+      "sector": "Banking",
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ibps.in",
+      "apply_url": "https://www.ibps.in/",
+      "daily_tip": "Prepare systematically for ESIC UDC & MTS: Focus 40 minutes today on high-weightage current affairs and static GK from the last 6 months."
     },
     {
       "id": 58,
-      "exam_name": "State Police SI (PSI/Daroga)",
-      "sector": "State PSC",
-      "status": "CBT Scheduled Dec/Jan",
-      "target_window": "December 2026 - January 2027",
-      "daily_tip": "Practice state-specific penal codes and landmark judgments alongside physical fitness drills daily."
+      "exam_name": "UIIC AO/Assistant",
+      "sector": "Banking",
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ibps.in",
+      "apply_url": "https://www.ibps.in/",
+      "daily_tip": "Prepare systematically for UIIC AO/Assistant: Review your weak areas from recent mock tests and revise core formula sheets."
     },
     {
       "id": 59,
-      "exam_name": "State Police Constable",
-      "sector": "State PSC",
-      "status": "Admit Card Soon",
-      "target_window": "Late 2026",
-      "daily_tip": "Solve previous years' state GK questions to master recurring static geography and history topics."
+      "exam_name": "NICL AO",
+      "sector": "Banking",
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ibps.in",
+      "apply_url": "https://www.ibps.in/",
+      "daily_tip": "Prepare systematically for NICL AO: Check the official portal early to avoid last-day server slowdowns during form submission."
     },
     {
       "id": 60,
-      "exam_name": "Territorial Army Officer",
-      "sector": "UPSC",
-      "status": "Annual Cycle",
-      "target_window": "Mid 2027",
-      "daily_tip": "Treat the Territorial Army exam like CDS by focusing equally on elementary mathematics and general knowledge."
+      "exam_name": "State Police SI (PSI/Daroga)",
+      "sector": "State PSC",
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "mpsc.gov.in",
+      "apply_url": "https://mpsc.gov.in/",
+      "daily_tip": "Prepare systematically for State Police SI (PSI/Daroga): Practice sectional speed drills in quantitative aptitude and logical reasoning to clear cutoffs."
     },
     {
       "id": 61,
-      "exam_name": "State PCS (MPSC/UPPSC/BPSC)",
+      "exam_name": "State Police Constable",
       "sector": "State PSC",
-      "status": "CBT Scheduled Dec/Jan",
-      "target_window": "December 2026 - March 2027",
-      "daily_tip": "Incorporate answer-writing practice for regional socio-economic issues into your daily study routine."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "mpsc.gov.in",
+      "apply_url": "https://mpsc.gov.in/",
+      "daily_tip": "Prepare systematically for State Police Constable: Solve at least one full-length previous year mock test under timed conditions today."
     },
     {
       "id": 62,
-      "exam_name": "MPSC Group B & C",
+      "exam_name": "State PCS (MPSC/UPPSC/BPSC)",
       "sector": "State PSC",
-      "status": "Notification Expected",
-      "target_window": "Early 2027",
-      "daily_tip": "Do not skip Maharashtra state board books for history and geography as direct questions frequently appear."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "mpsc.gov.in",
+      "apply_url": "https://mpsc.gov.in/",
+      "daily_tip": "Prepare systematically for State PCS (MPSC/UPPSC/BPSC): Keep scanned copies of your photograph, signature, and category certificate ready before the portal rush."
     },
     {
       "id": 63,
-      "exam_name": "Talathi / Patwari / Lekhpal",
+      "exam_name": "MPSC Group B & C",
       "sector": "State PSC",
-      "status": "Annual Cycle",
-      "target_window": "Early 2027",
-      "daily_tip": "Brush up on state land revenue systems and local administrative terminology to gain an edge."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "mpsc.gov.in",
+      "apply_url": "https://mpsc.gov.in/",
+      "daily_tip": "Prepare systematically for MPSC Group B & C: Focus 40 minutes today on high-weightage current affairs and static GK from the last 6 months."
     },
     {
       "id": 64,
-      "exam_name": "UPSSSC PET / CET",
+      "exam_name": "Talathi / Patwari / Lekhpal",
       "sector": "State PSC",
-      "status": "Notification Expected",
-      "target_window": "Early 2027",
-      "daily_tip": "Focus heavily on graph interpretation and data tables, as they constitute a major scoring chunk in PET."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "mpsc.gov.in",
+      "apply_url": "https://mpsc.gov.in/",
+      "daily_tip": "Prepare systematically for Talathi / Patwari / Lekhpal: Review your weak areas from recent mock tests and revise core formula sheets."
     },
     {
       "id": 65,
-      "exam_name": "State High Court ASO/Clerk",
+      "exam_name": "UPSSSC PET / CET",
       "sector": "State PSC",
-      "status": "Admit Card Soon",
-      "target_window": "Late 2026",
-      "daily_tip": "Dedicate specific hours to improve typing speed and master legal vocabulary for the clerical skill test."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "mpsc.gov.in",
+      "apply_url": "https://mpsc.gov.in/",
+      "daily_tip": "Prepare systematically for UPSSSC PET / CET: Check the official portal early to avoid last-day server slowdowns during form submission."
     },
     {
       "id": 66,
-      "exam_name": "Zilla Parishad (ZP) Exams",
+      "exam_name": "State High Court ASO/Clerk",
       "sector": "State PSC",
-      "status": "Notification Expected",
-      "target_window": "Early 2027",
-      "daily_tip": "Study rural development schemes and local governance structures thoroughly to ace the ZP exams."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "mpsc.gov.in",
+      "apply_url": "https://mpsc.gov.in/",
+      "daily_tip": "Prepare systematically for State High Court ASO/Clerk: Practice sectional speed drills in quantitative aptitude and logical reasoning to clear cutoffs."
     },
     {
       "id": 67,
-      "exam_name": "State Forest Guard",
+      "exam_name": "Zilla Parishad (ZP) Exams",
       "sector": "State PSC",
-      "status": "CBT Scheduled Dec/Jan",
-      "target_window": "December 2026",
-      "daily_tip": "Memorize national parks, wildlife sanctuaries, and major flora-fauna categories specific to your state."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "mpsc.gov.in",
+      "apply_url": "https://mpsc.gov.in/",
+      "daily_tip": "Prepare systematically for Zilla Parishad (ZP) Exams: Solve at least one full-length previous year mock test under timed conditions today."
     },
     {
       "id": 68,
-      "exam_name": "FCI AG-III & Manager",
-      "sector": "Banking",
-      "status": "Notification Expected",
-      "target_window": "Early 2027",
-      "daily_tip": "Review agricultural economics and basic food corporation policies to tackle management-specific sections."
+      "exam_name": "State Forest Guard",
+      "sector": "State PSC",
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "mpsc.gov.in",
+      "apply_url": "https://mpsc.gov.in/",
+      "daily_tip": "Prepare systematically for State Forest Guard: Keep scanned copies of your photograph, signature, and category certificate ready before the portal rush."
     },
     {
       "id": 69,
-      "exam_name": "ESIC UDC & MTS",
-      "sector": "Banking",
-      "status": "Notification Expected",
-      "target_window": "Mid 2027",
-      "daily_tip": "Practice standard banking-level quantitative aptitude sets to easily handle ESIC preliminary questions."
+      "exam_name": "State Judiciary (PCS-J)",
+      "sector": "State PSC",
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "mpsc.gov.in",
+      "apply_url": "https://mpsc.gov.in/",
+      "daily_tip": "Prepare systematically for State Judiciary (PCS-J): Focus 40 minutes today on high-weightage current affairs and static GK from the last 6 months."
     },
     {
       "id": 70,
-      "exam_name": "NVS / EMRS Non-Teaching",
-      "sector": "Teaching",
-      "status": "Notification Expected",
-      "target_window": "Early 2027",
-      "daily_tip": "Strengthen your computer literacy and general Hindi/English grammar, as these are crucial scoring pillars."
+      "exam_name": "Army Agniveer",
+      "sector": "PSU/Tech",
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ncs.gov.in",
+      "apply_url": "https://www.ncs.gov.in/",
+      "daily_tip": "Prepare systematically for Army Agniveer: Review your weak areas from recent mock tests and revise core formula sheets."
     },
     {
       "id": 71,
-      "exam_name": "GATE",
+      "exam_name": "Air Force Agniveer Vayu",
       "sector": "PSU/Tech",
-      "status": "CBT Scheduled Dec/Jan",
-      "target_window": "February 2027",
-      "daily_tip": "Analyze full-length previous years' GATE papers exclusively under timed conditions to refine your stamina."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ncs.gov.in",
+      "apply_url": "https://www.ncs.gov.in/",
+      "daily_tip": "Prepare systematically for Air Force Agniveer Vayu: Check the official portal early to avoid last-day server slowdowns during form submission."
     },
     {
       "id": 72,
-      "exam_name": "ISRO Scientist/Engineer",
+      "exam_name": "Navy Agniveer SSR/MR",
       "sector": "PSU/Tech",
-      "status": "Notification Expected",
-      "target_window": "Mid 2027",
-      "daily_tip": "Focus on core engineering mechanics, electromagnetics, and signal systems depending on your specific branch."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ncs.gov.in",
+      "apply_url": "https://www.ncs.gov.in/",
+      "daily_tip": "Prepare systematically for Navy Agniveer SSR/MR: Practice sectional speed drills in quantitative aptitude and logical reasoning to clear cutoffs."
     },
     {
       "id": 73,
-      "exam_name": "DRDO Scientist B & CEPTAM",
+      "exam_name": "Indian Coast Guard Navik",
       "sector": "PSU/Tech",
-      "status": "Notification Expected",
-      "target_window": "Early 2027",
-      "daily_tip": "Revise standard undergraduate textbook derivations to quickly solve conceptual technical objective questions."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ncs.gov.in",
+      "apply_url": "https://www.ncs.gov.in/",
+      "daily_tip": "Prepare systematically for Indian Coast Guard Navik: Solve at least one full-length previous year mock test under timed conditions today."
     },
     {
       "id": 74,
-      "exam_name": "BARC Scientific Officer",
+      "exam_name": "GATE",
       "sector": "PSU/Tech",
-      "status": "Notification Expected",
-      "target_window": "Early 2027",
-      "daily_tip": "Practice numerical problem-solving without calculators to align with BARC's rigorous screening test pattern."
+      "status": "Result / Merit List Update",
+      "last_date": "Check Portal",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ncs.gov.in",
+      "apply_url": "https://www.ncs.gov.in/",
+      "daily_tip": "Latest Update: GATE Cutoff for PSU Recruitment 2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017. Keep scanned copies of your photograph, signature, and category certificate ready before the portal rush."
     },
     {
       "id": 75,
-      "exam_name": "NIC Scientist B (NIELIT)",
+      "exam_name": "ISRO Scientist/Engineer",
       "sector": "PSU/Tech",
-      "status": "Notification Expected",
-      "target_window": "Mid 2027",
-      "daily_tip": "Revise computer networks, operating systems, and data structures thoroughly for the NIC technical syllabus."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ncs.gov.in",
+      "apply_url": "https://www.ncs.gov.in/",
+      "daily_tip": "Prepare systematically for ISRO Scientist/Engineer: Focus 40 minutes today on high-weightage current affairs and static GK from the last 6 months."
     },
     {
       "id": 76,
-      "exam_name": "AAI ATC Junior Executive",
+      "exam_name": "DRDO Scientist B & CEPTAM",
       "sector": "PSU/Tech",
-      "status": "Notification Expected",
-      "target_window": "Q1-Q2 2027",
-      "daily_tip": "Focus heavily on Physics and Mathematics numericals to secure a competitive edge in the AAI ATC screening."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ncs.gov.in",
+      "apply_url": "https://www.ncs.gov.in/",
+      "daily_tip": "Prepare systematically for DRDO Scientist B & CEPTAM: Review your weak areas from recent mock tests and revise core formula sheets."
     },
     {
       "id": 77,
-      "exam_name": "Maharatna PSU Non-GATE (HPCL/BEL)",
+      "exam_name": "BARC Scientific Officer",
       "sector": "PSU/Tech",
-      "status": "Apply Online",
-      "target_window": "Late 2026",
-      "daily_tip": "Tailor your technical revision toward domain-specific core subjects highlighted in recent Maharatna notifications."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ncs.gov.in",
+      "apply_url": "https://www.ncs.gov.in/",
+      "daily_tip": "Prepare systematically for BARC Scientific Officer: Check the official portal early to avoid last-day server slowdowns during form submission."
     },
     {
       "id": 78,
-      "exam_name": "State Electricity Board (MSEDCL AE/JE)",
+      "exam_name": "NIC Scientist B (NIELIT)",
       "sector": "PSU/Tech",
-      "status": "Notification Expected",
-      "target_window": "Early 2027",
-      "daily_tip": "Practice state utility previous year electrical and mechanical engineering question papers under timed conditions."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ncs.gov.in",
+      "apply_url": "https://www.ncs.gov.in/",
+      "daily_tip": "Prepare systematically for NIC Scientist B (NIELIT): Practice sectional speed drills in quantitative aptitude and logical reasoning to clear cutoffs."
     },
     {
       "id": 79,
-      "exam_name": "CPWD / State PWD JE/AE",
+      "exam_name": "AAI ATC Junior Executive",
       "sector": "PSU/Tech",
-      "status": "Annual Cycle",
-      "target_window": "Mid 2027",
-      "daily_tip": "Memorize IS code provisions and standard building material specifications thoroughly for technical sections."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ncs.gov.in",
+      "apply_url": "https://www.ncs.gov.in/",
+      "daily_tip": "Prepare systematically for AAI ATC Junior Executive: Solve at least one full-length previous year mock test under timed conditions today."
     },
     {
       "id": 80,
-      "exam_name": "CSIR CASE SO/ASO",
-      "sector": "UPSC",
-      "status": "Result Awaited",
-      "target_window": "2026-2027",
-      "daily_tip": "Stay updated with central government administrative procedures, RTI guidelines, and recent parliamentary acts."
+      "exam_name": "Maharatna PSU Non-GATE (HPCL/BEL)",
+      "sector": "PSU/Tech",
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ncs.gov.in",
+      "apply_url": "https://www.ncs.gov.in/",
+      "daily_tip": "Prepare systematically for Maharatna PSU Non-GATE (HPCL/BEL): Keep scanned copies of your photograph, signature, and category certificate ready before the portal rush."
     },
     {
       "id": 81,
-      "exam_name": "UGC NET / JRF",
-      "sector": "Teaching",
-      "status": "Notification Expected",
-      "target_window": "December 2026",
-      "daily_tip": "Analyze research methodology patterns deeply as they carry significant weight in Paper 1."
+      "exam_name": "State Electricity Board (MSEDCL AE/JE)",
+      "sector": "PSU/Tech",
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ncs.gov.in",
+      "apply_url": "https://www.ncs.gov.in/",
+      "daily_tip": "Prepare systematically for State Electricity Board (MSEDCL AE/JE): Focus 40 minutes today on high-weightage current affairs and static GK from the last 6 months."
     },
     {
       "id": 82,
-      "exam_name": "CSIR NET",
+      "exam_name": "CPWD / State PWD JE/AE",
       "sector": "PSU/Tech",
-      "status": "Notification Expected",
-      "target_window": "December 2026",
-      "daily_tip": "Focus on high-yielding foundational topics in Part B and C to clear the rigorous net fellowship cutoff."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ncs.gov.in",
+      "apply_url": "https://www.ncs.gov.in/",
+      "daily_tip": "Prepare systematically for CPWD / State PWD JE/AE: Review your weak areas from recent mock tests and revise core formula sheets."
     },
     {
       "id": 83,
-      "exam_name": "CTET",
-      "sector": "Teaching",
-      "status": "Apply Online",
-      "target_window": "December 2026",
-      "daily_tip": "Solve previous years' child development and pedagogy case studies to master application-based questions."
+      "exam_name": "CSIR NET",
+      "sector": "PSU/Tech",
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ncs.gov.in",
+      "apply_url": "https://www.ncs.gov.in/",
+      "daily_tip": "Latest Update: PSU opportunities after qualifying for CSIR NET. Check the official portal early to avoid last-day server slowdowns during form submission."
     },
     {
       "id": 84,
-      "exam_name": "State TET / MAHA TET",
+      "exam_name": "NVS / EMRS Non-Teaching",
       "sector": "Teaching",
-      "status": "Notification Expected",
-      "target_window": "Q1 2027",
-      "daily_tip": "Review regional language grammar and regional board textbook content to ace state-level teaching tests."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ctet.nic.in",
+      "apply_url": "https://ctet.nic.in/",
+      "daily_tip": "Prepare systematically for NVS / EMRS Non-Teaching: Practice sectional speed drills in quantitative aptitude and logical reasoning to clear cutoffs."
     },
     {
       "id": 85,
-      "exam_name": "KVS PRT/TGT/PGT",
+      "exam_name": "UGC NET / JRF",
       "sector": "Teaching",
-      "status": "Notification Expected",
-      "target_window": "Mid 2027",
-      "daily_tip": "Brush up on National Education Policy (NEP) guidelines and progressive teaching methodologies for the interview round."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ctet.nic.in",
+      "apply_url": "https://ctet.nic.in/",
+      "daily_tip": "Prepare systematically for UGC NET / JRF: Solve at least one full-length previous year mock test under timed conditions today."
     },
     {
       "id": 86,
-      "exam_name": "DSSSB Teachers & DASS",
+      "exam_name": "CTET",
       "sector": "Teaching",
-      "status": "CBT Scheduled",
-      "target_window": "Q1 2027",
-      "daily_tip": "Maintain high reading speed for the Tier-1 General Awareness and quantitative aptitude sections."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ctet.nic.in",
+      "apply_url": "https://ctet.nic.in/",
+      "daily_tip": "Prepare systematically for CTET: Keep scanned copies of your photograph, signature, and category certificate ready before the portal rush."
     },
     {
       "id": 87,
-      "exam_name": "B.Ed CET (MAH/UP)",
-      "sector": "Entrance",
-      "status": "Annual Cycle",
-      "target_window": "April-May 2027",
-      "daily_tip": "Improve logical reasoning and teaching aptitude sections by practicing mock tests regularly."
+      "exam_name": "State TET / MAHA TET",
+      "sector": "Teaching",
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ctet.nic.in",
+      "apply_url": "https://ctet.nic.in/",
+      "daily_tip": "Prepare systematically for State TET / MAHA TET: Focus 40 minutes today on high-weightage current affairs and static GK from the last 6 months."
     },
     {
       "id": 88,
-      "exam_name": "UIIC AO/Assistant",
-      "sector": "Banking",
-      "status": "Notification Expected",
-      "target_window": "Early 2027",
-      "daily_tip": "Read insurance sector updates and general awareness current affairs capsules daily without fail."
+      "exam_name": "KVS PRT/TGT/PGT",
+      "sector": "Teaching",
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ctet.nic.in",
+      "apply_url": "https://ctet.nic.in/",
+      "daily_tip": "Prepare systematically for KVS PRT/TGT/PGT: Review your weak areas from recent mock tests and revise core formula sheets."
     },
     {
       "id": 89,
-      "exam_name": "NICL AO",
-      "sector": "Banking",
-      "status": "Notification Expected",
-      "target_window": "Early 2027",
-      "daily_tip": "Focus on descriptive English writing to secure an edge in insurance administrative officer Mains exams."
+      "exam_name": "DSSSB Teachers & DASS",
+      "sector": "Teaching",
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "ctet.nic.in",
+      "apply_url": "https://ctet.nic.in/",
+      "daily_tip": "Prepare systematically for DSSSB Teachers & DASS: Check the official portal early to avoid last-day server slowdowns during form submission."
     },
     {
       "id": 90,
-      "exam_name": "State Judiciary (PCS-J)",
-      "sector": "State PSC",
-      "status": "Ongoing Recruitment",
-      "target_window": "2026-2027",
-      "daily_tip": "Make crisp bare act notes and keep track of landmark Supreme Court judgments delivered this year."
+      "exam_name": "B.Ed CET (MAH/UP)",
+      "sector": "Entrance",
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "nta.ac.in",
+      "apply_url": "https://www.nta.ac.in/",
+      "daily_tip": "Prepare systematically for B.Ed CET (MAH/UP): Practice sectional speed drills in quantitative aptitude and logical reasoning to clear cutoffs."
     },
     {
       "id": 91,
       "exam_name": "JEE Main & Advanced",
       "sector": "Entrance",
-      "status": "Application Open",
-      "target_window": "January & April 2027",
-      "daily_tip": "Prioritize high-weightage chapters in organic chemistry and calculus to maximize your percentile."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "nta.ac.in",
+      "apply_url": "https://www.nta.ac.in/",
+      "daily_tip": "Prepare systematically for JEE Main & Advanced: Solve at least one full-length previous year mock test under timed conditions today."
     },
     {
       "id": 92,
       "exam_name": "NEET UG",
       "sector": "Entrance",
-      "status": "Notification Expected",
-      "target_window": "May 2027",
-      "daily_tip": "Treat NCERT Biology textbooks as your absolute gospel for clearing the medical entrance examination."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "nta.ac.in",
+      "apply_url": "https://www.nta.ac.in/",
+      "daily_tip": "Prepare systematically for NEET UG: Keep scanned copies of your photograph, signature, and category certificate ready before the portal rush."
     },
     {
       "id": 93,
       "exam_name": "State Engg CET (MHT-CET/KCET)",
       "sector": "Entrance",
-      "status": "Notification Expected",
-      "target_window": "April-May 2027",
-      "daily_tip": "Practice state board syllabus questions meticulously since state CETs heavily mirror textbook formats."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "nta.ac.in",
+      "apply_url": "https://www.nta.ac.in/",
+      "daily_tip": "Prepare systematically for State Engg CET (MHT-CET/KCET): Focus 40 minutes today on high-weightage current affairs and static GK from the last 6 months."
     },
     {
       "id": 94,
       "exam_name": "CUET UG & PG",
       "sector": "Entrance",
-      "status": "Notification Expected",
-      "target_window": "May-June 2027",
-      "daily_tip": "Master your domain-specific subjects thoroughly while keeping sectional language skills sharp."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "nta.ac.in",
+      "apply_url": "https://www.nta.ac.in/",
+      "daily_tip": "Prepare systematically for CUET UG & PG: Review your weak areas from recent mock tests and revise core formula sheets."
     },
     {
       "id": 95,
       "exam_name": "CAT",
       "sector": "Entrance",
-      "status": "Admit Card Issued",
-      "target_window": "November 2026",
-      "daily_tip": "Refine your question selection strategy during full-length mocks to avoid getting stuck on tough DILR sets."
+      "status": "Apply Online Open",
+      "last_date": "Active Window 2026",
+      "target_window": "2026-2027 Session",
+      "official_portal": "nta.ac.in",
+      "apply_url": "https://www.nta.ac.in/",
+      "daily_tip": "Latest Update: NLC India GET Recruitment 2026 Notification Out, Apply Online for 143 Vacancies Through GATE 2025. Check the official portal early to avoid last-day server slowdowns during form submission."
     },
     {
       "id": 96,
       "exam_name": "XAT / SNAP / CMAT / MAH-MBA-CET",
       "sector": "Entrance",
-      "status": "Apply Online",
-      "target_window": "Dec 2026 - Mar 2027",
-      "daily_tip": "Prepare explicitly for Decision Making for XAT and focus on speed mathematics for SNAP."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "nta.ac.in",
+      "apply_url": "https://www.nta.ac.in/",
+      "daily_tip": "Prepare systematically for XAT / SNAP / CMAT / MAH-MBA-CET: Practice sectional speed drills in quantitative aptitude and logical reasoning to clear cutoffs."
     },
     {
       "id": 97,
       "exam_name": "CLAT & AILET",
       "sector": "Entrance",
-      "status": "Admit Card Out",
-      "target_window": "December 2026",
-      "daily_tip": "Enhance your reading comprehension stamina by analyzing long editorial articles and legal passages daily."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "nta.ac.in",
+      "apply_url": "https://www.nta.ac.in/",
+      "daily_tip": "Prepare systematically for CLAT & AILET: Solve at least one full-length previous year mock test under timed conditions today."
     },
     {
       "id": 98,
       "exam_name": "CA / CS / CMA",
       "sector": "Entrance",
-      "status": "Exam Scheduled",
-      "target_window": "Nov-Dec 2026",
-      "daily_tip": "Revise practical accounting standards and tax provisions using concise self-made summary charts."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "nta.ac.in",
+      "apply_url": "https://www.nta.ac.in/",
+      "daily_tip": "Prepare systematically for CA / CS / CMA: Keep scanned copies of your photograph, signature, and category certificate ready before the portal rush."
     },
     {
       "id": 99,
       "exam_name": "NIMCET",
       "sector": "Entrance",
-      "status": "Notification Expected",
-      "target_window": "May-June 2027",
-      "daily_tip": "Strengthen your analytical ability in vector algebra and coordinate geometry for top MCA admissions."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "nta.ac.in",
+      "apply_url": "https://www.nta.ac.in/",
+      "daily_tip": "Prepare systematically for NIMCET: Focus 40 minutes today on high-weightage current affairs and static GK from the last 6 months."
     },
     {
       "id": 100,
       "exam_name": "BITSAT & IISER IAT",
       "sector": "Entrance",
-      "status": "Notification Expected",
-      "target_window": "May-June 2027",
-      "daily_tip": "Work on time management to navigate BITSAT's high volume of questions with accuracy."
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
+      "target_window": "2026-2027 Session",
+      "official_portal": "nta.ac.in",
+      "apply_url": "https://www.nta.ac.in/",
+      "daily_tip": "Prepare systematically for BITSAT & IISER IAT: Review your weak areas from recent mock tests and revise core formula sheets."
     }
   ]
 }
