@@ -50,7 +50,7 @@ EXAM_BATCHES = {
 }
 
 def fetch_live_rss_news(query):
-    """Fetches free live Google News RSS headlines with a fast 5-second timeout so it never hangs."""
+    """Fetches free live Google News RSS headlines with a fast 5-second timeout."""
     url = f"https://news.google.com/rss/search?q={urllib.parse.quote(query)}+exam+notification+india&hl=en-IN&gl=IN&ceid=IN:en"
     headlines = []
     try:
@@ -65,8 +65,8 @@ def fetch_live_rss_news(query):
     return "\n".join(headlines)
 
 def generate_batch(prompt):
-    """Fast execution using gemini-3.8-flash with immediate model fallback."""
-    models_to_try = ["gemini-3.8-flash", "gemini-3.5-flash-lite"]
+    """Iterates through verified supported Gemini models with robust error logging."""
+    models_to_try = ["gemini-2.5-flash", "gemini-1.5-flash", "gemini-2.5-flash-lite"]
     
     for model_name in models_to_try:
         try:
@@ -84,14 +84,14 @@ def generate_batch(prompt):
                 raw = raw.split("\n", 1)[1].rsplit("```", 1)[0].strip()
             return json.loads(raw), model_name
         except Exception as e:
-            print(f"Model {model_name} note: {e}. Trying next...")
-            time.sleep(1)
+            print(f"Model {model_name} failed: {e}. Trying next...")
+            time.sleep(2)
             
-    raise RuntimeError("Model generation failed.")
+    raise RuntimeError("All verified model attempts failed.")
 
 def update_all_100_exams():
     all_exams = []
-    active_model = "gemini-3.8-flash"
+    active_model = "gemini-2.5-flash"
 
     for batch_name, exam_list in EXAM_BATCHES.items():
         print(f"Generating {batch_name} (25 exams)...")
@@ -119,7 +119,7 @@ Return ONLY a valid JSON array.
 """
         batch_items, active_model = generate_batch(prompt)
         all_exams.extend(batch_items)
-        time.sleep(2)  # Short 2-second pause
+        time.sleep(3)
 
     for idx, exam in enumerate(all_exams, start=1):
         exam["id"] = idx
