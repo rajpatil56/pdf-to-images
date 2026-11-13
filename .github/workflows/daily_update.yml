@@ -12,6 +12,7 @@ permissions:
 jobs:
   update-exam-json:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -22,7 +23,8 @@ jobs:
           python-version: '3.11'
 
       - name: Run 100-Exam RSS Scraper
-        run: python update_exams.py
+        timeout-minutes: 2
+        run: python -u update_exams.py
 
       - name: Commit and Push Updated JSON
         run: |
