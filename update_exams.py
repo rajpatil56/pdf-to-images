@@ -6,14 +6,12 @@ import urllib.parse
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone, timedelta
 
-# Optional Google GenAI SDK import for fallback
 try:
     from google import genai
     from google.genai import types
 except ImportError:
     genai = None
 
-# API Keys & Antigravity Configuration from GitHub Secrets
 ANTIGRAVITY_API_KEY = os.environ.get("ANTIGRAVITY_API_KEY", "").strip()
 ANTIGRAVITY_BASE_URL = os.environ.get(
     "ANTIGRAVITY_BASE_URL",
@@ -24,13 +22,11 @@ ANTIGRAVITY_MODEL = os.environ.get("ANTIGRAVITY_MODEL", "antigravity-default").s
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "").strip()
 gemini_client = genai.Client(api_key=GEMINI_API_KEY) if (genai and GEMINI_API_KEY) else None
 
-# Set Indian Standard Time (IST)
 ist = timezone(timedelta(hours=5, minutes=30))
 now_ist = datetime.now(ist)
 today_str = now_ist.strftime("%d %B %Y")
 time_str = now_ist.strftime("%I:%M %p IST")
 
-# All 100 exams grouped into 4 batches of 25 exams
 EXAM_BATCHES = {
     "Batch 1: SSC, Railways & UPSC": [
         "SSC CGL", "SSC CHSL", "SSC MTS & Havaldar", "SSC GD Constable", "SSC CPO",
@@ -63,18 +59,15 @@ EXAM_BATCHES = {
 }
 
 def clean_json_response(raw_text):
-    """Strips markdown code fences and parses a JSON array safely."""
     raw = raw_text.strip()
     if raw.startswith("```"):
         raw = raw.split("\n", 1)[1].rsplit("```", 1)[0].strip()
-    start_idx = raw.find("[")
-    end_idx = raw.rfind("]")
-    if start_idx != -1 and end_idx != -1:
-        raw = raw[start_idx:end_idx + 1]
+    s, e = raw.find("["), raw.rfind("]")
+    if s != -1 and e != -1:
+        raw = raw[s:e + 1]
     return json.loads(raw)
 
 def fetch_live_rss_news(query):
-    """Fetches free live Google News RSS headlines with a 5-second timeout."""
     url = f"https://news.google.com/rss/search?q={urllib.parse.quote(query)}+exam+notification+india&hl=en-IN&gl=IN&ceid=IN:en"
     headlines = []
     try:
@@ -89,42 +82,30 @@ def fetch_live_rss_news(query):
     return "\n".join(headlines)
 
 def call_antigravity_api(prompt):
-    """Calls Antigravity API (OpenAI-compatible /v1/chat/completions format)."""
     if not ANTIGRAVITY_API_KEY:
         return None, None
-
-    antigravity_models = [
-        ANTIGRAVITY_MODEL,
-        "antigravity-agent",
-        "gemini-3.8-flash",
-        "gemini-3.5-flash-lite",
-        "claude-3-5-sonnet"
-    ]
-
-    for model_name in antigravity_models:
+    models = [ANTIGRAVITY_MODEL, "antigravity-agent", "gemini-3.8-flash", "gemini-3.5-flash-lite"]
+    for m in models:
         try:
             payload = json.dumps({
-                "model": model_name,
+                "model": m,
                 "messages": [
-                    {"role": "system", "content": "You are an Indian government exam data API. Return ONLY a valid JSON array."},
+                    {"role": "system", "content": "Return ONLY a valid JSON array."},
                     {"role": "user", "content": prompt}
                 ],
                 "temperature": 0.3,
                 "max_tokens": 8192
             }).encode("utf-8")
-
             req = urllib.request.Request(
                 ANTIGRAVITY_BASE_URL,
                 data=payload,
                 headers={
                     "Content-Type": "application/json",
                     "Authorization": f"Bearer {ANTIGRAVITY_API_KEY}",
-                    "x-api-key": ANTIGRAVITY_API_KEY,
-                    "User-Agent": "RojgaarNam-Updater/1.0"
+                    "x-api-key": ANTIGRAVITY_API_KEY
                 },
                 method="POST"
             )
-
             with urllib.request.urlopen(req, timeout=45) as resp:
                 resp_data = json.loads(resp.read().decode("utf-8"))
                 content = (
@@ -135,34 +116,23 @@ def call_antigravity_api(prompt):
                 )
                 parsed = clean_json_response(content)
                 if isinstance(parsed, list) and len(parsed) > 0:
-                    print(f"Batch generated via Antigravity ({model_name})")
-                    return parsed, f"antigravity:{model_name}"
+                    return parsed, f"antigravity:{m}"
         except Exception as e:
-            print(f"Antigravity ({model_name}) note: {e}")
+            print(f"Antigravity ({m}) note: {e}")
             time.sleep(2)
-
     return None, None
 
 def generate_batch(prompt):
-    """Tries Antigravity API first, then falls back to Google Gemini 3.8 / 3.5 / 2.5 models."""
-    # 1. Primary: Antigravity API
     ag_data, ag_model = call_antigravity_api(prompt)
     if ag_data:
         return ag_data, ag_model
-
-    # 2. Fallback: Gemini SDK (with retry rounds for 503 spikes)
     if gemini_client:
-        gemini_models = [
-            "gemini-3.8-flash",
-            "gemini-3.5-flash-lite",
-            "gemini-2.5-flash",
-            "gemini-2.5-flash-lite"
-        ]
-        for round_num in range(1, 5):
-            for model_name in gemini_models:
+        gemini_models = ["gemini-3.8-flash", "gemini-3.5-flash-lite", "gemini-2.5-flash", "gemini-2.5-flash-lite"]
+        for r in range(1, 5):
+            for m in gemini_models:
                 try:
-                    response = gemini_client.models.generate_content(
-                        model=model_name,
+                    resp = gemini_client.models.generate_content(
+                        model=m,
                         contents=prompt,
                         config=types.GenerateContentConfig(
                             response_mime_type="application/json",
@@ -170,15 +140,13 @@ def generate_batch(prompt):
                             temperature=0.3,
                         ),
                     )
-                    parsed = clean_json_response(response.text)
+                    parsed = clean_json_response(resp.text)
                     if isinstance(parsed, list) and len(parsed) > 0:
-                        print(f"Batch generated via Gemini ({model_name}) on round {round_num}")
-                        return parsed, model_name
+                        return parsed, m
                 except Exception as e:
-                    print(f"[Round {round_num}/4] {model_name} note: {e}")
+                    print(f"[Round {r}/4] {m} note: {e}")
                     time.sleep(2)
-            time.sleep(round_num * 4)
-
+            time.sleep(r * 4)
     return None, None
 
 def update_all_100_exams():
@@ -191,37 +159,50 @@ def update_all_100_exams():
             existing_exams = []
 
     all_exams = []
-    active_model = "antigravity"
+    active_model = "gemini-3.8-flash"
 
     for batch_idx, (batch_name, exam_list) in enumerate(EXAM_BATCHES.items()):
         print(f"Generating {batch_name} (25 exams)...")
         live_news = fetch_live_rss_news(batch_name.split(":")[1])
-
-        prompt = f"""
-Today is {today_str}.
-Live news reference: {live_news}
-
-Generate a valid JSON array for these exact 25 exams:
-{json.dumps(exam_list)}
-
-Each of the 25 objects in the JSON array MUST contain these exact keys:
-- "id": Number from 1 to 25
-- "exam_name": Exact name from the list
-- "sector": MUST be one of: "Railways", "SSC", "Banking", "UPSC", "State PSC", "PSU/Tech", "Teaching", or "Entrance"
-- "status": Current status as of {today_str} (e.g., "Apply Online", "CBT Scheduled", "Admit Card Out")
+        prompt = f"""Today is {today_str}.
+Live news: {live_news}
+Generate a JSON array for these 25 exams: {json.dumps(exam_list)}
+Required keys per object:
+- "id": 1 to 25
+- "exam_name": Exact name
+- "sector": One of "Railways", "SSC", "Banking", "UPSC", "State PSC", "PSU/Tech", "Teaching", "Entrance"
+- "status": Current status (e.g., "Apply Online", "CBT Scheduled", "Admit Card Out")
 - "last_date": Last Date to Fill Form (e.g., "30 Nov 2026" or "TBA")
 - "target_window": Timeline for 2026-2027
-- "official_portal": Official domain (e.g., "rrbapply.gov.in", "ssc.gov.in", "upsconline.nic.in", "ibps.in")
-- "apply_url": Full https:// URL (e.g., "https://www.rrbapply.gov.in/")
-- "daily_tip": 1-sentence study or form-filling tip.
+- "official_portal": Official domain (e.g., "rrbapply.gov.in", "ssc.gov.in")
+- "apply_url": Full https:// URL
+- "daily_tip": 1-sentence tip.
+Return ONLY a valid JSON array."""
 
-Return ONLY a valid JSON array.
-"""
         batch_items, used_model = generate_batch(prompt)
         if batch_items:
             all_exams.extend(batch_items)
             active_model = used_model
         else:
             start_i = batch_idx * 25
-            fallback_slice = existing_exams[start_i:start_i + 25]
-            print(f"Using cached data for {batch_name} so
+            all_exams.extend(existing_exams[start_i:start_i + 25])
+            print(f"Using cached data for {batch_name} so workflow stays green.")
+        time.sleep(2)
+
+    for idx, exam in enumerate(all_exams, start=1):
+        exam["id"] = idx
+
+    output_data = {
+        "last_updated": f"{today_str}, {time_str}",
+        "model_used": active_model,
+        "total_exams": len(all_exams),
+        "exams": all_exams
+    }
+
+    with open("exams-data.json", "w", encoding="utf-8") as f:
+        json.dump(output_data, f, indent=2, ensure_ascii=False)
+
+    print(f"Success! {len(all_exams)} exams written using {active_model}.")
+
+if __name__ == "__main__":
+    update_all_100_exams()
