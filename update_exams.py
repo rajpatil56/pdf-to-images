@@ -65,8 +65,12 @@ def fetch_live_rss_news(query):
     return "\n".join(headlines)
 
 def generate_batch(prompt):
-    """Iterates through verified supported Gemini models with robust error logging."""
-    models_to_try = ["gemini-2.5-flash", "gemini-1.5-flash", "gemini-2.5-flash-lite"]
+    """Tries 2.5 and 3.5 model aliases with automatic fallback."""
+    models_to_try = [
+        "gemini-3.5-flash-lite",
+        "gemini-2.5-flash",
+        "gemini-2.5-flash-lite"
+    ]
     
     for model_name in models_to_try:
         try:
@@ -87,11 +91,11 @@ def generate_batch(prompt):
             print(f"Model {model_name} failed: {e}. Trying next...")
             time.sleep(2)
             
-    raise RuntimeError("All verified model attempts failed.")
+    raise RuntimeError("All 2.5 and 3.5 model attempts failed.")
 
 def update_all_100_exams():
     all_exams = []
-    active_model = "gemini-2.5-flash"
+    active_model = "gemini-3.5-flash-lite"
 
     for batch_name, exam_list in EXAM_BATCHES.items():
         print(f"Generating {batch_name} (25 exams)...")
