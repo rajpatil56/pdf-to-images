@@ -1,6 +1,6 @@
 {
-  "last_updated": "13 November 2026, 06:03 PM IST",
-  "model_used": "live-rss-scraper-v1",
+  "last_updated": "13 November 2026, 06:11 PM IST",
+  "model_used": "fast-parallel-rss-v2",
   "total_exams": 100,
   "exams": [
     {
@@ -128,12 +128,12 @@
       "id": 12,
       "exam_name": "RRB NTPC Undergraduate",
       "sector": "Railways",
-      "status": "Exam Schedule Out",
-      "last_date": "2026-2027 Cycle",
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
       "target_window": "2026-2027 Session",
       "official_portal": "rrbapply.gov.in",
       "apply_url": "https://www.rrbapply.gov.in/",
-      "daily_tip": "Latest Update: RRB NTPC Undergraduate CBT 2 Exam Date 2026 Out, Check Official Notice. Practice sectional speed drills in quantitative aptitude and logical reasoning to clear cutoffs."
+      "daily_tip": "Prepare systematically for RRB NTPC Undergraduate: Practice sectional speed drills in quantitative aptitude and logical reasoning to clear cutoffs."
     },
     {
       "id": 13,
@@ -144,7 +144,7 @@
       "target_window": "2026-2027 Session",
       "official_portal": "rrbapply.gov.in",
       "apply_url": "https://www.rrbapply.gov.in/",
-      "daily_tip": "Latest Update: RRB Group D Recruitment 2026: CEN 9/2025 notification released for 21997 posts, apply here. Solve at least one full-length previous year mock test under timed conditions today."
+      "daily_tip": "Latest Update: RRB Group D Syllabus 2027: Subject-Wise Topics, Marking Scheme & Selection Process. Solve at least one full-length previous year mock test under timed conditions today."
     },
     {
       "id": 14,
@@ -172,12 +172,12 @@
       "id": 16,
       "exam_name": "RRB JE",
       "sector": "Railways",
-      "status": "Exam Schedule Out",
-      "last_date": "2026-2027 Cycle",
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
       "target_window": "2026-2027 Session",
       "official_portal": "rrbapply.gov.in",
       "apply_url": "https://www.rrbapply.gov.in/",
-      "daily_tip": "Latest Update: RRB JE Exam Date 2026, Check 4487 Revised Vacancies Here. Review your weak areas from recent mock tests and revise core formula sheets."
+      "daily_tip": "Latest Update: RRB JE 2026 Recruitment: 4,098 vacancies for Railways Junior Engineer posts out, apply from August 14. Review your weak areas from recent mock tests and revise core formula sheets."
     },
     {
       "id": 17,
@@ -254,7 +254,7 @@
       "target_window": "2026-2027 Session",
       "official_portal": "upsconline.nic.in",
       "apply_url": "https://upsconline.nic.in/",
-      "daily_tip": "Latest Update: UPSC ESE Exam Date 2027 Out, CBT Exam on 31 January 2027, Check Exam Schedule Here. Check the official portal early to avoid last-day server slowdowns during form submission."
+      "daily_tip": "Latest Update: UPSC ESE 2027 exam date announced: Prelims on January 31, Mains scheduled for June 18; check complete tim. Check the official portal early to avoid last-day server slowdowns during form submission."
     },
     {
       "id": 24,
@@ -414,12 +414,12 @@
       "id": 38,
       "exam_name": "IBPS PO",
       "sector": "Banking",
-      "status": "Exam Schedule Out",
-      "last_date": "2026-2027 Cycle",
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
       "target_window": "2026-2027 Session",
       "official_portal": "ibps.in",
       "apply_url": "https://www.ibps.in/",
-      "daily_tip": "Latest Update: IBPS PO Exam Date 2026 Out for Mains, Check Full Schedule. Keep scanned copies of your photograph, signature, and category certificate ready before the portal rush."
+      "daily_tip": "Prepare systematically for IBPS PO: Keep scanned copies of your photograph, signature, and category certificate ready before the portal rush."
     },
     {
       "id": 39,
@@ -436,12 +436,12 @@
       "id": 40,
       "exam_name": "IBPS SO",
       "sector": "Banking",
-      "status": "Exam Schedule Out",
-      "last_date": "2026-2027 Cycle",
+      "status": "Active 2026-27 Cycle",
+      "last_date": "Check Official Calendar",
       "target_window": "2026-2027 Session",
       "official_portal": "ibps.in",
       "apply_url": "https://www.ibps.in/",
-      "daily_tip": "Latest Update: IBPS SO 2026 Mains Exam Date Out (1043 Vacancies), Check Mains Exam Schedule. Review your weak areas from recent mock tests and revise core formula sheets."
+      "daily_tip": "Prepare systematically for IBPS SO: Review your weak areas from recent mock tests and revise core formula sheets."
     },
     {
       "id": 41,
@@ -914,7 +914,7 @@
       "target_window": "2026-2027 Session",
       "official_portal": "ncs.gov.in",
       "apply_url": "https://www.ncs.gov.in/",
-      "daily_tip": "Latest Update: PSU opportunities after qualifying for CSIR NET. Check the official portal early to avoid last-day server slowdowns during form submission."
+      "daily_tip": "Prepare systematically for CSIR NET: Check the official portal early to avoid last-day server slowdowns during form submission."
     },
     {
       "id": 84,
