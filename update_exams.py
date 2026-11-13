@@ -13,7 +13,9 @@ client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
 
 # Set Indian Standard Time (IST)
 ist = timezone(timedelta(hours=5, minutes=30))
-today_str = datetime.now(ist).strftime("%d %B %Y")
+now_ist = datetime.now(ist)
+today_str = now_ist.strftime("%d %B %Y")
+time_str = now_ist.strftime("%I:%M %p IST")
 
 # All 100 exams grouped into 4 batches of 25 exams (Uses only 4 RPD out of 500 RPD)
 EXAM_BATCHES = {
@@ -103,9 +105,12 @@ Each of the 25 objects in the JSON array MUST contain these exact keys:
 - "id": Number from 1 to 25
 - "exam_name": Exact name from the list
 - "sector": MUST be one of these exact strings so website filters work: "Railways", "SSC", "Banking", "UPSC", "State PSC", "PSU/Tech", "Teaching", or "Entrance"
-- "status": Current status as of {today_str} (e.g., "Apply Online", "CBT Scheduled Dec/Jan", "Admit Card Soon", "Notification Expected", "Annual Cycle")
+- "status": Current status as of {today_str} (e.g., "Apply Online", "CBT Scheduled Dec/Jan", "Admit Card Out", "Notification Expected", "Annual Cycle")
+- "last_date": Exact or expected Last Date to Fill Form (e.g., "13 Nov 2026", "30 Dec 2026", or "TBA - Check Notice")
 - "target_window": Exam or application timeline for 2026-2027
-- "daily_tip": A fresh, original, practical 1-sentence study or exam-strategy tip for students.
+- "official_portal": Official website domain where students apply (e.g., "rrbapply.gov.in", "ssc.gov.in", "upsconline.nic.in", "ibps.in", "sbi.co.in", "mpsc.gov.in", "nta.ac.in")
+- "apply_url": Full https:// official application URL (e.g., "https://www.rrbapply.gov.in/", "https://ssc.gov.in/", "https://upsconline.nic.in/")
+- "daily_tip": A fresh, original, practical 1-sentence study or form-filling tip for students.
 
 Return ONLY a valid JSON array containing all 25 objects.
 """
@@ -120,7 +125,7 @@ Return ONLY a valid JSON array containing all 25 objects.
         exam["id"] = idx
 
     output_data = {
-        "last_updated": f"{today_str}, 06:00 AM IST",
+        "last_updated": f"{today_str}, {time_str}",
         "model_used": active_model,
         "total_exams": len(all_exams),
         "exams": all_exams
