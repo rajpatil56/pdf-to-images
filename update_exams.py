@@ -5,11 +5,24 @@ import urllib.request
 import urllib.parse
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone, timedelta
-from google import genai
-from google.genai import types
 
-# Initialize client with the GEMINI_API_KEY from GitHub Secrets
-client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
+# Optional Google GenAI SDK import for fallback
+try:
+    from google import genai
+    from google.genai import types
+except ImportError:
+    genai = None
+
+# API Keys & Antigravity Configuration from GitHub Secrets
+ANTIGRAVITY_API_KEY = os.environ.get("ANTIGRAVITY_API_KEY", "").strip()
+ANTIGRAVITY_BASE_URL = os.environ.get(
+    "ANTIGRAVITY_BASE_URL",
+    "https://api.antigravity.dev/v1/chat/completions"
+).strip()
+ANTIGRAVITY_MODEL = os.environ.get("ANTIGRAVITY_MODEL", "antigravity-default").strip()
+
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "").strip()
+gemini_client = genai.Client(api_key=GEMINI_API_KEY) if (genai and GEMINI_API_KEY) else None
 
 # Set Indian Standard Time (IST)
 ist = timezone(timedelta(hours=5, minutes=30))
@@ -49,8 +62,19 @@ EXAM_BATCHES = {
     ]
 }
 
+def clean_json_response(raw_text):
+    """Strips markdown code fences and parses a JSON array safely."""
+    raw = raw_text.strip()
+    if raw.startswith("```"):
+        raw = raw.split("\n", 1)[1].rsplit("```", 1)[0].strip()
+    start_idx = raw.find("[")
+    end_idx = raw.rfind("]")
+    if start_idx != -1 and end_idx != -1:
+        raw = raw[start_idx:end_idx + 1]
+    return json.loads(raw)
+
 def fetch_live_rss_news(query):
-    """Fetches free live Google News RSS headlines with a fast 5-second timeout."""
+    """Fetches free live Google News RSS headlines with a 5-second timeout."""
     url = f"https://news.google.com/rss/search?q={urllib.parse.quote(query)}+exam+notification+india&hl=en-IN&gl=IN&ceid=IN:en"
     headlines = []
     try:
@@ -64,40 +88,112 @@ def fetch_live_rss_news(query):
         pass
     return "\n".join(headlines)
 
-def generate_batch(prompt):
-    """Tries 2.5 and 3.5 model aliases with automatic fallback."""
-    models_to_try = [
+def call_antigravity_api(prompt):
+    """Calls Antigravity API (OpenAI-compatible /v1/chat/completions format)."""
+    if not ANTIGRAVITY_API_KEY:
+        return None, None
+
+    antigravity_models = [
+        ANTIGRAVITY_MODEL,
+        "antigravity-agent",
+        "gemini-3.8-flash",
         "gemini-3.5-flash-lite",
-        "gemini-2.5-flash",
-        "gemini-2.5-flash-lite"
+        "claude-3-5-sonnet"
     ]
-    
-    for model_name in models_to_try:
+
+    for model_name in antigravity_models:
         try:
-            response = client.models.generate_content(
-                model=model_name,
-                contents=prompt,
-                config=types.GenerateContentConfig(
-                    response_mime_type="application/json",
-                    max_output_tokens=8192,
-                    temperature=0.3,
-                ),
+            payload = json.dumps({
+                "model": model_name,
+                "messages": [
+                    {"role": "system", "content": "You are an Indian government exam data API. Return ONLY a valid JSON array."},
+                    {"role": "user", "content": prompt}
+                ],
+                "temperature": 0.3,
+                "max_tokens": 8192
+            }).encode("utf-8")
+
+            req = urllib.request.Request(
+                ANTIGRAVITY_BASE_URL,
+                data=payload,
+                headers={
+                    "Content-Type": "application/json",
+                    "Authorization": f"Bearer {ANTIGRAVITY_API_KEY}",
+                    "x-api-key": ANTIGRAVITY_API_KEY,
+                    "User-Agent": "RojgaarNam-Updater/1.0"
+                },
+                method="POST"
             )
-            raw = response.text.strip()
-            if raw.startswith("```"):
-                raw = raw.split("\n", 1)[1].rsplit("```", 1)[0].strip()
-            return json.loads(raw), model_name
+
+            with urllib.request.urlopen(req, timeout=45) as resp:
+                resp_data = json.loads(resp.read().decode("utf-8"))
+                content = (
+                    resp_data.get("choices", [{}])[0].get("message", {}).get("content")
+                    or resp_data.get("text")
+                    or resp_data.get("output")
+                    or ""
+                )
+                parsed = clean_json_response(content)
+                if isinstance(parsed, list) and len(parsed) > 0:
+                    print(f"Batch generated via Antigravity ({model_name})")
+                    return parsed, f"antigravity:{model_name}"
         except Exception as e:
-            print(f"Model {model_name} failed: {e}. Trying next...")
+            print(f"Antigravity ({model_name}) note: {e}")
             time.sleep(2)
-            
-    raise RuntimeError("All 2.5 and 3.5 model attempts failed.")
+
+    return None, None
+
+def generate_batch(prompt):
+    """Tries Antigravity API first, then falls back to Google Gemini 3.8 / 3.5 / 2.5 models."""
+    # 1. Primary: Antigravity API
+    ag_data, ag_model = call_antigravity_api(prompt)
+    if ag_data:
+        return ag_data, ag_model
+
+    # 2. Fallback: Gemini SDK (with retry rounds for 503 spikes)
+    if gemini_client:
+        gemini_models = [
+            "gemini-3.8-flash",
+            "gemini-3.5-flash-lite",
+            "gemini-2.5-flash",
+            "gemini-2.5-flash-lite"
+        ]
+        for round_num in range(1, 5):
+            for model_name in gemini_models:
+                try:
+                    response = gemini_client.models.generate_content(
+                        model=model_name,
+                        contents=prompt,
+                        config=types.GenerateContentConfig(
+                            response_mime_type="application/json",
+                            max_output_tokens=8192,
+                            temperature=0.3,
+                        ),
+                    )
+                    parsed = clean_json_response(response.text)
+                    if isinstance(parsed, list) and len(parsed) > 0:
+                        print(f"Batch generated via Gemini ({model_name}) on round {round_num}")
+                        return parsed, model_name
+                except Exception as e:
+                    print(f"[Round {round_num}/4] {model_name} note: {e}")
+                    time.sleep(2)
+            time.sleep(round_num * 4)
+
+    return None, None
 
 def update_all_100_exams():
-    all_exams = []
-    active_model = "gemini-3.5-flash-lite"
+    existing_exams = []
+    if os.path.exists("exams-data.json"):
+        try:
+            with open("exams-data.json", "r", encoding="utf-8") as f:
+                existing_exams = json.load(f).get("exams", [])
+        except Exception:
+            existing_exams = []
 
-    for batch_name, exam_list in EXAM_BATCHES.items():
+    all_exams = []
+    active_model = "antigravity"
+
+    for batch_idx, (batch_name, exam_list) in enumerate(EXAM_BATCHES.items()):
         print(f"Generating {batch_name} (25 exams)...")
         live_news = fetch_live_rss_news(batch_name.split(":")[1])
 
@@ -121,24 +217,11 @@ Each of the 25 objects in the JSON array MUST contain these exact keys:
 
 Return ONLY a valid JSON array.
 """
-        batch_items, active_model = generate_batch(prompt)
-        all_exams.extend(batch_items)
-        time.sleep(3)
-
-    for idx, exam in enumerate(all_exams, start=1):
-        exam["id"] = idx
-
-    output_data = {
-        "last_updated": f"{today_str}, {time_str}",
-        "model_used": active_model,
-        "total_exams": len(all_exams),
-        "exams": all_exams
-    }
-
-    with open("exams-data.json", "w", encoding="utf-8") as f:
-        json.dump(output_data, f, indent=2, ensure_ascii=False)
-
-    print(f"Success! {len(all_exams)} exams written using {active_model}.")
-
-if __name__ == "__main__":
-    update_all_100_exams()
+        batch_items, used_model = generate_batch(prompt)
+        if batch_items:
+            all_exams.extend(batch_items)
+            active_model = used_model
+        else:
+            start_i = batch_idx * 25
+            fallback_slice = existing_exams[start_i:start_i + 25]
+            print(f"Using cached data for {batch_name} so
