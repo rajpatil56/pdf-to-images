@@ -33,12 +33,13 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
+          # Configure remote pull behavior
+          git pull origin main --rebase || true
+          
           git add exams-data.json
           
-          # Only commit if there are actual staged changes
+          # Only commit if there are actual changes
           git diff --staged --quiet || git commit -m "Auto-update 100 exams for $(date +'%Y-%m-%d')"
           
-          # Pull latest changes with rebase to prevent non-fast-forward rejection
-          git pull --rebase origin main
-          
+          # Push safely to main
           git push origin main
